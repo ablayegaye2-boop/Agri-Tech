@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AGRI·TECH — Cultures, conseils et calendrier agricole</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">AGRI<span>·TECH</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Accueil</a></li>
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="protection.html">Protection</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>La technologie au service<br><span>de l'agriculture africaine</span></h1>
+    <p>Conseils pratiques, fiches cultures, calendrier agricole et protection des récoltes — tout ce dont l'agriculteur moderne a besoin.</p>
+    <a href="cultures.html" class="btn-hero">Explorer les cultures →</a>
+  </section>
+
+  <!-- STATISTIQUES -->
+  <section style="background: var(--blanc); padding: 2.5rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:1.5rem; text-align:center;">
+      <div>
+        <div style="font-size:2.2rem; font-weight:800; color:var(--vert-moyen);">+50</div>
+        <div style="color:var(--gris-texte); font-size:0.95rem;">Cultures référencées</div>
+      </div>
+      <div>
+        <div style="font-size:2.2rem; font-weight:800; color:var(--vert-moyen);">12</div>
+        <div style="color:var(--gris-texte); font-size:0.95rem;">Mois de calendrier</div>
+      </div>
+      <div>
+        <div style="font-size:2.2rem; font-weight:800; color:var(--vert-moyen);">+30</div>
+        <div style="color:var(--gris-texte); font-size:0.95rem;">Fiches pratiques</div>
+      </div>
+      <div>
+        <div style="font-size:2.2rem; font-weight:800; color:var(--vert-moyen);">100%</div>
+        <div style="color:var(--gris-texte); font-size:0.95rem;">Gratuit & accessible</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CULTURES POPULAIRES -->
+  <section class="section">
+    <h2 class="section-title">Cultures populaires</h2>
+    <p class="section-subtitle">Les plantes les plus cultivées dans nos régions</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-img">🌾</div>
+        <div class="card-body">
+          <span class="card-tag">Céréale</span>
+          <h3>Riz</h3>
+          <p>Culture principale en zones humides. Nécessite beaucoup d'eau et un sol argileux bien drainé.</p>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">🌽</div>
+        <div class="card-body">
+          <span class="card-tag">Céréale</span>
+          <h3>Maïs</h3>
+          <p>Très répandu, adapté à de nombreux climats. Récolte en 90 à 120 jours selon la variété.</p>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">🍅</div>
+        <div class="card-body">
+          <span class="card-tag">Légume</span>
+          <h3>Tomate</h3>
+          <p>Culture maraîchère très rentable. Demande un suivi régulier contre les maladies fongiques.</p>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">🥜</div>
+        <div class="card-body">
+          <span class="card-tag">Légumineuse</span>
+          <h3>Arachide</h3>
+          <p>Excellente pour fixer l'azote dans le sol. Culture sèche très adaptée aux zones sahéliennes.</p>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">🧅</div>
+        <div class="card-body">
+          <span class="card-tag">Légume</span>
+          <h3>Oignon</h3>
+          <p>Culture à forte valeur commerciale. Demande un sol meuble et une irrigation régulière.</p>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img">🍠</div>
+        <div class="card-body">
+          <span class="card-tag">Tubercule</span>
+          <h3>Manioc</h3>
+          <p>Culture rustique résistante à la sécheresse. Racines récoltées 8 à 18 mois après plantation.</p>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="cultures.html" class="btn btn-primary">Voir toutes les cultures</a>
+    </div>
+  </section>
+
+  <!-- CONSEILS -->
+  <section style="background: var(--vert-pale); padding: 4rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <h2 class="section-title">Conseils du moment</h2>
+      <p class="section-subtitle">Bonnes pratiques pour améliorer vos rendements</p>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem;">
+        <div class="info-box"><strong>💧 Irrigation</strong><br>Arrosez tôt le matin ou en fin d'après-midi pour limiter l'évaporation.</div>
+        <div class="info-box"><strong>🐛 Surveillance des ravageurs</strong><br>Inspectez vos plants 2 à 3 fois par semaine pour détecter les insectes.</div>
+        <div class="info-box"><strong>🌱 Rotation des cultures</strong><br>Alternez les familles de plantes chaque saison pour maintenir la fertilité.</div>
+        <div class="info-box"><strong>🌡️ Saison sèche</strong><br>Paillez le sol pour conserver l'humidité et réduire les besoins en eau de 30 à 40%.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDRIER APERÇU -->
+  <section class="section">
+    <h2 class="section-title">Calendrier agricole</h2>
+    <p class="section-subtitle">Les travaux essentiels ce trimestre</p>
+    <div class="calendrier-grid">
+      <div class="mois-card"><h3>🌧️ Juin</h3><ul><li>Semis du maïs</li><li>Préparation des rizières</li><li>Désherbage arachide</li><li>Traitement préventif tomate</li></ul></div>
+      <div class="mois-card"><h3>☔ Juillet</h3><ul><li>Repiquage du riz</li><li>Fertilisation maïs</li><li>Semis oignon (pépinière)</li><li>Surveillance mildou</li></ul></div>
+      <div class="mois-card"><h3>🌤️ Août</h3><ul><li>Récolte précoce maïs</li><li>Buttage arachide</li><li>Irrigation oignon</li><li>Traitement antifongique</li></ul></div>
+      <div class="mois-card"><h3>☀️ Septembre</h3><ul><li>Récolte riz</li><li>Séchage et stockage</li><li>Préparation sol hiver</li><li>Semis cultures sèches</li></ul></div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="calendrier.html" class="btn btn-outline">Voir le calendrier complet</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background: var(--vert-fonce); color:var(--blanc); text-align:center; padding:4rem 2rem;">
+    <h2 style="font-size:2rem; margin-bottom:1rem;">Besoin d'un conseil personnalisé ?</h2>
+    <p style="max-width:500px; margin:0 auto 2rem; color:rgba(255,255,255,0.8);">Notre équipe répond à toutes vos questions agricoles.</p>
+    <a href="contact.html" class="btn-hero">Nous contacter</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">AGRI<span>·TECH</span></div>
+    <ul class="footer-links">
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="protection.html">Protection</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+   <p>© 2024 AGRI·TECH — <a href="https://portfolio-website-lime-iota-41.vercel.app/">  droits réservés  </p></a>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
