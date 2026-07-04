@@ -1,0 +1,21 @@
+/* ===========================
+   AGRI·TECH — Feuille de style
+   =========================== */
+
+/* === Variables de couleurs === */
+:root {
+    --vert-fonce: #1a4731;
+    --vert-moyen: #2d7a4f;
+    --vert-clair: #4caf7d;
+    --vert-pale: #e8f5ee;
+    --jaune-or: #f5a623;
+    --brun: #7c5c3e;
+    --beige: #f9f5ef;
+    --blanc: #ffffff;
+    --gris-clair: #f4f4f4;
+    --gris-texte: #555555;
+    --noir-texte: #1a1a1a;
+    --ombre: 0 4px 16px rgba(0,0,0,0.10);
+    --radius: 10px;
+    --radius-lg: 18px;
+  }
