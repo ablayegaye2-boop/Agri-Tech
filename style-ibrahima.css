@@ -19,3 +19,31 @@
     --radius: 10px;
     --radius-lg: 18px;
   }
+  /* === Reset & Base === */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--beige);
+    color: var(--noir-texte);
+    line-height: 1.7;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
