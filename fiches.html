@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AGRI·TECH — Fiches pratiques</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">AGRI<span>·TECH</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="protection.html">Protection</a></li>
+      <li><a href="fiches.html" class="active">Fiches</a></li>
+      
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- EN-TÊTE -->
+  <section style="background: linear-gradient(135deg, var(--vert-fonce), var(--vert-moyen)); color:var(--blanc); padding:3.5rem 2rem; text-align:center;">
+    <h1 style="font-size:2.2rem; font-weight:800; margin-bottom:0.7rem;">📄 Fiches Pratiques</h1>
+    <p style="color:rgba(255,255,255,0.85); max-width:580px; margin:0 auto;">Des guides étape par étape pour cultiver efficacement. Semis, entretien, récolte et stockage pour chaque culture.</p>
+  </section>
+
+  <!-- FILTRES -->
+  <section class="section" style="padding-bottom:0;">
+    <h2 class="section-title">Toutes les fiches</h2>
+    <p class="section-subtitle">Cliquez sur une fiche pour voir le guide complet</p>
+    <div class="filtres">
+      <button class="filtre-btn actif" onclick="filtrerFiches('tous', this)">Toutes</button>
+      <button class="filtre-btn" onclick="filtrerFiches('cereale', this)">🌾 Céréales</button>
+      <button class="filtre-btn" onclick="filtrerFiches('legume', this)">🥦 Légumes</button>
+      <button class="filtre-btn" onclick="filtrerFiches('legumineuse', this)">🫘 Légumineuses</button>
+      <button class="filtre-btn" onclick="filtrerFiches('tubercule', this)">🍠 Tubercules</button>
+    </div>
+  </section>
+
+  <!-- GRILLE FICHES -->
+  <section class="section" style="padding-top:1.5rem;">
+    <div class="cards-grid" id="grille-fiches">
+
+      <!-- FICHE RIZ -->
+      <div class="card" data-type="cereale">
+        <div class="card-img" style="background:var(--vert-pale);">🌾</div>
+        <div class="card-body">
+          <span class="card-tag">Céréale</span>
+          <h3>Fiche Riz</h3>
+          <p>Guide complet de la culture du riz : préparation rizière, repiquage, gestion de l'eau et récolte.</p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+            <span style="background:#e3f2fd; color:#1565c0; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">⏱ 120–150 j</span>
+            <span style="background:#e8f5e9; color:#2e7d32; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">💧 Forte</span>
+            <span style="background:#fff3e0; color:#e65100; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">🌧️ Hivernage</span>
+          </div>
+          <button class="btn btn-primary" style="width:100%;" onclick="ouvrirFiche('riz')">Voir la fiche →</button>
+        </div>
+      </div>
+
+      <!-- FICHE MAÏS -->
+      <div class="card" data-type="cereale">
+        <div class="card-img" style="background:#fffde7;">🌽</div>
+        <div class="card-body">
+          <span class="card-tag">Céréale</span>
+          <h3>Fiche Maïs</h3>
+          <p>Semis, fertilisation azotée, buttage et récolte du maïs. Conseils contre les chenilles légionnaires.</p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+            <span style="background:#e3f2fd; color:#1565c0; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">⏱ 90–120 j</span>
+            <span style="background:#e8f5e9; color:#2e7d32; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">💧 Modérée</span>
+            <span style="background:#fff3e0; color:#e65100; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">🌧️ Hivernage</span>
+          </div>
+          <button class="btn btn-primary" style="width:100%;" onclick="ouvrirFiche('mais')">Voir la fiche →</button>
+        </div>
+      </div>
+
+      <!-- FICHE TOMATE -->
+      <div class="card" data-type="legume">
+        <div class="card-img" style="background:#fce4ec;">🍅</div>
+        <div class="card-body">
+          <span class="card-tag">Légume</span>
+          <h3>Fiche Tomate</h3>
+          <p>Pépinière, repiquage, tuteurage, taille et protection contre le mildou et les insectes.</p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+            <span style="background:#e3f2fd; color:#1565c0; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">⏱ 60–90 j</span>
+            <span style="background:#e8f5e9; color:#2e7d32; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">💧 Régulière</span>
+            <span style="background:#e3f2fd; color:#1565c0; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">☀️ Saison sèche</span>
+          </div>
+          <button class="btn btn-primary" style="width:100%;" onclick="ouvrirFiche('tomate')">Voir la fiche →</button>
+        </div>
+      </div>
+
+      <!-- FICHE OIGNON -->
+      <div class="card" data-type="legume">
+        <div class="card-img" style="background:#fff3e0;">🧅</div>
+        <div class="card-body">
+          <span class="card-tag">Légume</span>
+          <h3>Fiche Oignon</h3>
+          <p>Pépinière, repiquage, irrigation goutte-à-goutte, récolte et séchage de l'oignon.</p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+            <span style="background:#e3f2fd; color:#1565c0; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">⏱ 90–120 j</span>
+            <span style="background:#e8f5e9; color:#2e7d32; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">💧 Régulière</span>
+            <span style="background:#e3f2fd; color:#1565c0; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">☀️ Saison sèche</span>
+          </div>
+          <button class="btn btn-primary" style="width:100%;" onclick="ouvrirFiche('oignon')">Voir la fiche →</button>
+        </div>
+      </div>
+
+      <!-- FICHE ARACHIDE -->
+      <div class="card" data-type="legumineuse">
+        <div class="card-img" style="background:#fff8e1;">🥜</div>
+        <div class="card-body">
+          <span class="card-tag">Légumineuse</span>
+          <h3>Fiche Arachide</h3>
+          <p>Préparation sol, semis en poquet, buttage, récolte et séchage des gousses d'arachide.</p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+            <span style="background:#e3f2fd; color:#1565c0; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">⏱ 90–120 j</span>
+            <span style="background:#e8f5e9; color:#2e7d32; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">💧 Faible</span>
+            <span style="background:#fff3e0; color:#e65100; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">🌧️ Hivernage</span>
+          </div>
+          <button class="btn btn-primary" style="width:100%;" onclick="ouvrirFiche('arachide')">Voir la fiche →</button>
+        </div>
+      </div>
+
+      <!-- FICHE MANIOC -->
+      <div class="card" data-type="tubercule">
+        <div class="card-img" style="background:#efebe9;">🍠</div>
+        <div class="card-body">
+          <span class="card-tag">Tubercule</span>
+          <h3>Fiche Manioc</h3>
+          <p>Plantation par boutures, entretien minimal, récolte et techniques de conservation du manioc.</p>
+          <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1rem;">
+            <span style="background:#e3f2fd; color:#1565c0; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">⏱ 8–18 mois</span>
+            <span style="background:#e8f5e9; color:#2e7d32; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">💧 Faible</span>
+            <span style="background:#e8f5e9; color:#2e7d32; padding:0.2rem 0.6rem; border-radius:50px; font-size:0.78rem;">🔄 Toute l'année</span>
+          </div>
+          <button class="btn btn-primary" style="width:100%;" onclick="ouvrirFiche('manioc')">Voir la fiche →</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========== MODAL FICHE DÉTAILLÉE ========== -->
+  <div id="modal-fiche" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:9999; overflow-y:auto;">
+    <div style="background:var(--blanc); max-width:700px; margin:2rem auto; border-radius:var(--radius-lg); overflow:hidden; position:relative;">
+      <div id="modal-header" style="background:var(--vert-fonce); color:var(--blanc); padding:1.5rem 2rem;">
+        <h2 id="modal-titre" style="font-size:1.5rem; font-weight:800;"></h2>
+        <p id="modal-sous-titre" style="color:rgba(255,255,255,0.8); margin-top:0.3rem;"></p>
+      </div>
+      <button onclick="fermerFiche()" style="position:absolute; top:1rem; right:1rem; background:rgba(255,255,255,0.2); border:none; color:white; width:36px; height:36px; border-radius:50%; font-size:1.2rem; cursor:pointer;">✕</button>
+      <div id="modal-contenu" style="padding:2rem;"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">AGRI<span>·TECH</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="protection.html">Protection</a></li>
+      
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p>© 2024 AGRI·TECH — Tous droits réservés</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+
+    // === FILTRES ===
+    function filtrerFiches(type, btn) {
+      document.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('actif'));
+      btn.classList.add('actif');
+      document.querySelectorAll('#grille-fiches .card').forEach(carte => {
+        carte.style.display = (type === 'tous' || carte.dataset.type === type) ? 'block' : 'none';
+      });
+    }
+
+    // === DONNÉES DES FICHES ===
+    const fiches = {
+      riz: {
+        titre: '🌾 Fiche Culture — Riz',
+        sousTitre: 'Céréale | Hivernage | 120–150 jours',
+        contenu: `
+          <div class="info-box">ℹ️ Le riz est la principale culture vivrière des zones humides. Il nécessite une gestion rigoureuse de l'eau.</div>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">1. Préparation du sol</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Labourer à 20–25 cm de profondeur</li>
+            <li>Niveler parfaitement la rizière pour une irrigation uniforme</li>
+            <li>Apporter du fumier (5 t/ha) avant labour</li>
+            <li>Construire les diguettes de retenue d'eau</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">2. Pépinière et semis</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Préparer la pépinière 25–30 jours avant le repiquage</li>
+            <li>Semer à raison de 40–60 kg/ha de semences certifiées</li>
+            <li>Maintenir 2–3 cm d'eau en pépinière</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">3. Repiquage</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Repiquer quand les plants ont 20–25 cm (25–30 jours)</li>
+            <li>Écartement : 20 x 20 cm ou 25 x 25 cm</li>
+            <li>2–3 plants par poquet</li>
+            <li>Repiquer tôt le matin ou en fin de journée</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">4. Fertilisation</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Fond : NPK (15-15-15) à 150 kg/ha au repiquage</li>
+            <li>Couverture : Urée à 100 kg/ha au tallage actif</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">5. Gestion de l'eau</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Maintenir 5–10 cm d'eau du repiquage à la floraison</li>
+            <li>Assécher 15–20 jours avant la récolte</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">6. Récolte</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Récolter quand 80–90% des grains sont mûrs (jaunâtres)</li>
+            <li>Couper à 15–20 cm du sol</li>
+            <li>Battre dans les 48h après coupe</li>
+            <li>Sécher à 14% d'humidité avant stockage</li>
+          </ul>
+          <div style="background:#e8f5e9; border-radius:var(--radius); padding:1rem; margin-top:1.2rem; color:#2e7d32;">
+            ✅ <strong>Rendement attendu :</strong> 3 à 6 tonnes/ha selon la variété et la gestion
+          </div>
+        `
+      },
+      mais: {
+        titre: '🌽 Fiche Culture — Maïs',
+        sousTitre: 'Céréale | Hivernage | 90–120 jours',
+        contenu: `
+          <div class="info-box">ℹ️ Le maïs est la céréale la plus cultivée. Très rentable avec une bonne fertilisation et une protection contre les chenilles.</div>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">1. Préparation du sol</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Labour profond à 25–30 cm</li>
+            <li>Sol bien ameubli, sans grosses mottes</li>
+            <li>Apporter du compost ou fumier décomposé</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">2. Semis</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Semer dès les premières pluies (juin–juillet)</li>
+            <li>Écartement : 75 cm entre rangs, 25–30 cm entre plants</li>
+            <li>2–3 graines par poquet à 3–5 cm de profondeur</li>
+            <li>Démarier à 1 plant/poquet à 2 semaines</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">3. Fertilisation</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>NPK au semis : 150 kg/ha</li>
+            <li>Urée au tallage (3–4 semaines) : 100 kg/ha</li>
+            <li>2ème apport urée avant montaison : 50 kg/ha</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">4. Entretien</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Désherbage à 3 et 6 semaines après semis</li>
+            <li>Butter les plants au 2ème sarclage</li>
+            <li>Surveiller les chenilles légionnaires (inspecter la nuit)</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">5. Récolte et stockage</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Récolter quand les spathes sont sèches et brunes</li>
+            <li>Égrener et sécher à 13% d'humidité</li>
+            <li>Stocker en sacs dans un endroit sec et aéré</li>
+          </ul>
+          <div style="background:#e8f5e9; border-radius:var(--radius); padding:1rem; margin-top:1.2rem; color:#2e7d32;">
+            ✅ <strong>Rendement attendu :</strong> 2 à 5 tonnes/ha selon fertilisation
+          </div>
+        `
+      },
+      tomate: {
+        titre: '🍅 Fiche Culture — Tomate',
+        sousTitre: 'Légume | Saison sèche | 60–90 jours',
+        contenu: `
+          <div class="info-box">ℹ️ La tomate est très rentable mais exige un suivi rigoureux contre les maladies fongiques et les insectes.</div>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">1. Pépinière</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Semer en pépinière 25–30 jours avant repiquage</li>
+            <li>Sol pépinière : 1/3 terre + 1/3 sable + 1/3 compost</li>
+            <li>Arroser matin et soir, sans excès</li>
+            <li>Traiter avec fongicide préventif dès la levée</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">2. Repiquage</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Repiquer quand les plants ont 15–20 cm</li>
+            <li>Écartement : 50 x 70 cm</li>
+            <li>Arroser abondamment après repiquage</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">3. Tuteurage et taille</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Installer des tuteurs de 1,5 m à 2 semaines</li>
+            <li>Attacher les tiges tous les 20–30 cm</li>
+            <li>Éliminer les gourmands (pousses axillaires)</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">4. Protection</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Traitement fongicide (bouillie bordelaise) tous les 10 jours</li>
+            <li>Insecticide contre pucerons et aleurodes si nécessaire</li>
+            <li>Éviter l'arrosage sur les feuilles</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">5. Récolte</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Récolter à maturité (rouge uniforme) ou vert tournant pour transport</li>
+            <li>Récolte tous les 2–3 jours sur 4–6 semaines</li>
+          </ul>
+          <div style="background:#e8f5e9; border-radius:var(--radius); padding:1rem; margin-top:1.2rem; color:#2e7d32;">
+            ✅ <strong>Rendement attendu :</strong> 20 à 40 tonnes/ha avec bonne gestion
+          </div>
+        `
+      },
+      oignon: {
+        titre: '🧅 Fiche Culture — Oignon',
+        sousTitre: 'Légume | Saison sèche | 90–120 jours',
+        contenu: `
+          <div class="info-box">ℹ️ L'oignon est très apprécié commercialement. Il demande un sol léger, bien drainé et une irrigation régulière.</div>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">1. Pépinière</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Semer en pépinière en octobre–novembre</li>
+            <li>Densité : 10 g de semences par m²</li>
+            <li>Ombrager les 2 premières semaines</li>
+            <li>Arroser régulièrement sans excès</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">2. Repiquage</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Repiquer à 45–50 jours en pépinière</li>
+            <li>Écartement : 15 x 20 cm sur billons</li>
+            <li>Couper l'extrémité des feuilles avant repiquage</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">3. Irrigation</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Irrigation tous les 3–4 jours en début de cycle</li>
+            <li>Réduire à 1 fois/semaine à la formation des bulbes</li>
+            <li>Arrêter l'irrigation 15 jours avant récolte</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">4. Récolte et séchage</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Récolter quand 50–70% des fanes sont couchées</li>
+            <li>Laisser sécher 7–10 jours au champ</li>
+            <li>Stocker en claies dans un endroit aéré</li>
+          </ul>
+          <div style="background:#e8f5e9; border-radius:var(--radius); padding:1rem; margin-top:1.2rem; color:#2e7d32;">
+            ✅ <strong>Rendement attendu :</strong> 15 à 30 tonnes/ha
+          </div>
+        `
+      },
+      arachide: {
+        titre: '🥜 Fiche Culture — Arachide',
+        sousTitre: 'Légumineuse | Hivernage | 90–120 jours',
+        contenu: `
+          <div class="info-box">ℹ️ L'arachide est très adaptée aux sols sahéliens. Elle enrichit le sol en azote et constitue une source importante de revenus.</div>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">1. Préparation</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Sol sableux à sablo-limoneux, bien drainé</li>
+            <li>Labour léger à 15–20 cm</li>
+            <li>Ne pas apporter trop d'azote (fixation naturelle)</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">2. Semis</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Semer dès les premières pluies utiles</li>
+            <li>Écartement : 40–50 cm entre rangs, 15–20 cm entre plants</li>
+            <li>2 graines par poquet à 3–5 cm de profondeur</li>
+            <li>Semences décortiquées et triées</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">3. Entretien</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Sarcler à 3 et 6 semaines</li>
+            <li>Butter au 2ème sarclage pour faciliter la pénétration des gynophores</li>
+            <li>Ne pas laisser les mauvaises herbes étouffer les plants</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">4. Récolte</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Arracher quand les feuilles jaunissent (90–120 jours)</li>
+            <li>Laisser sécher les plants retournés au soleil 5–7 jours</li>
+            <li>Battre et sécher les gousses à 8–9% d'humidité</li>
+          </ul>
+          <div style="background:#e8f5e9; border-radius:var(--radius); padding:1rem; margin-top:1.2rem; color:#2e7d32;">
+            ✅ <strong>Rendement attendu :</strong> 800 à 1500 kg/ha en gousses
+          </div>
+        `
+      },
+      manioc: {
+        titre: '🍠 Fiche Culture — Manioc',
+        sousTitre: 'Tubercule | Toute l\'année | 8–18 mois',
+        contenu: `
+          <div class="info-box">ℹ️ Le manioc est la culture la plus tolérante à la sécheresse. Peu exigeant, il convient aux sols pauvres.</div>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">1. Préparation des boutures</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Couper des tiges saines de 25–30 cm avec 4–5 nœuds</li>
+            <li>Utiliser la partie médiane de la tige (ni trop jeune ni trop vieille)</li>
+            <li>Laisser sécher 2–3 jours à l'ombre avant plantation</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">2. Plantation</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Planter en début de saison des pluies</li>
+            <li>Écartement : 1 m x 1 m ou 1 m x 0,8 m</li>
+            <li>Planter à 45° dans le sol à 2/3 de la bouture</li>
+            <li>Sur buttes ou billons pour meilleur drainage</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">3. Entretien</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Désherber les 3 premiers mois (période critique)</li>
+            <li>Après 3 mois, l'ombrage naturel limite les mauvaises herbes</li>
+            <li>Peu besoin d'engrais sur sol de bonne fertilité</li>
+          </ul>
+          <h3 style="color:var(--vert-fonce); margin:1.2rem 0 0.6rem;">4. Récolte</h3>
+          <ul style="padding-left:1.2rem; color:var(--gris-texte); line-height:2;">
+            <li>Récolter entre 8 et 18 mois selon la variété</li>
+            <li>Couper les tiges à 30 cm du sol avant d'arracher</li>
+            <li>Consommer rapidement après récolte (le manioc frais ne se conserve pas)</li>
+            <li>Transformer en farine, cossettes ou attiéké pour le stockage</li>
+          </ul>
+          <div style="background:#e8f5e9; border-radius:var(--radius); padding:1rem; margin-top:1.2rem; color:#2e7d32;">
+            ✅ <strong>Rendement attendu :</strong> 8 à 20 tonnes/ha de racines fraîches
+          </div>
+        `
+      }
+    };
+
+    // === OUVRIR MODAL ===
+    function ouvrirFiche(id) {
+      const fiche = fiches[id];
+      document.getElementById('modal-titre').textContent = fiche.titre;
+      document.getElementById('modal-sous-titre').textContent = fiche.sousTitre;
+      document.getElementById('modal-contenu').innerHTML = fiche.contenu;
+      document.getElementById('modal-fiche').style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+
+    // === FERMER MODAL ===
+    function fermerFiche() {
+      document.getElementById('modal-fiche').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    // Fermer en cliquant en dehors
+    document.getElementById('modal-fiche').addEventListener('click', function(e) {
+      if (e.target === this) fermerFiche();
+    });
+
+  </script>
+
+</body>
+</html>
