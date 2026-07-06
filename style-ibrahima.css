@@ -280,3 +280,42 @@
   .btn-outline:hover {
     background: var(--vert-pale);
   }
+ /* === BADGES SAISON === */
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .badge-printemps { background: #e8f5e9; color: #2e7d32; }
+  .badge-ete       { background: #fff3e0; color: #e65100; }
+  .badge-automne   { background: #fbe9e7; color: #bf360c; }
+  .badge-hiver     { background: #e3f2fd; color: #1565c0; }
+  
+  /* === FILTRES === */
+  .filtres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filtre-btn {
+    padding: 0.45rem 1.2rem;
+    border-radius: 50px;
+    border: 2px solid var(--vert-moyen);
+    background: transparent;
+    color: var(--vert-moyen);
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .filtre-btn:hover,
+  .filtre-btn.actif {
+    background: var(--vert-moyen);
+    color: var(--blanc);
+  }  
