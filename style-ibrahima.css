@@ -319,3 +319,39 @@
     background: var(--vert-moyen);
     color: var(--blanc);
   }  
+/* === CALENDRIER === */
+  .calendrier-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .mois-card {
+    background: var(--blanc);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--ombre);
+    padding: 1.2rem;
+    border-top: 5px solid var(--vert-clair);
+  }
+  
+  .mois-card h3 {
+    color: var(--vert-fonce);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+  }
+  
+  .mois-card ul li {
+    font-size: 0.88rem;
+    color: var(--gris-texte);
+    padding: 0.25rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+  }
+  
+  .mois-card ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .mois-card ul li::before {
+    content: '🌱 ';
+  }  
