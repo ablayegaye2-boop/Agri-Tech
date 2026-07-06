@@ -249,3 +249,34 @@
   .card-link:hover {
     color: var(--vert-clair);
   }    
+  /* === BOUTONS === */
+  .btn {
+    display: inline-block;
+    padding: 0.65rem 1.6rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.2s;
+  }
+  
+  .btn-primary {
+    background: var(--vert-moyen);
+    color: var(--blanc);
+  }
+  
+  .btn-primary:hover {
+    background: var(--vert-fonce);
+    transform: translateY(-1px);
+  }
+  
+  .btn-outline {
+    background: transparent;
+    color: var(--vert-moyen);
+    border: 2px solid var(--vert-moyen);
+  }
+  
+  .btn-outline:hover {
+    background: var(--vert-pale);
+  }
