@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculateur Agricole - Besoins en Semences</title>
+
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="calculator">
+
+        <h1>🌱 Calculateur Agricole</h1>
+
+        <p class="subtitle">
+            Calcul automatique des besoins en semences, du rendement et de la rentabilité
+        </p>
+
+        <div class="form-group">
+
+            <label for="culture">
+                Choisir une culture
+            </label>
+
+            <select id="culture">
+
+                <option value="">-- Sélectionner une culture --</option>
+
+                <option value="mais">🌽 Maïs</option>
+
+                <option value="sorgho">🌾 Sorgho</option>
+
+                <option value="mil">🌾 Mil</option>
+
+                <option value="arachide">🥜 Arachide</option>
+
+                <option value="gombo">🥬 Gombo</option>
+
+                <option value="tomate">🍅 Tomate</option>
+
+                <option value="piment">🌶️ Piment</option>
+
+                <option value="oignon">🧅 Oignon</option>
+
+                <option value="papaye">🥭 Papaye</option>
+
+                <option value="poivron">🫑 Poivron</option>
+
+            </select>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="surface">
+                Superficie cultivee (hectares)
+            </label>
+
+            <input
+                type="number"
+                id="surface"
+                min="0"
+                step="0.01"
+                placeholder="Exemple : 2.5">
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="prix">
+                Prix des semences (FCFA / kg)
+            </label>
+
+            <input
+                type="number"
+                id="prix"
+                min="0"
+                placeholder="Exemple : 1200">
+
+        </div>
+
+        <div class="buttons">
+
+            <button onclick="calculer()">
+                Calculer
+            </button>
+
+            <button onclick="reinitialiser()">
+                Réinitialiser
+            </button>
+
+        </div>
+
+        <hr>
+
+        <h2>Résultats</h2>
+
+        <div id="resultat">
+
+            <table class="result-table">
+
+                <tr>
+
+                    <th>Culture</th>
+
+                    <td id="resCulture">-</td>
+
+                </tr>
+
+                <tr>
+
+                    <th>Surface cultivee</th>
+
+                    <td id="resSurface">-</td>
+
+                </tr>
+
+                <tr>
+
+                    <th>Besoin en semences</th>
+
+                    <td id="resSemence">-</td>
+
+                </tr>
+
+                <tr>
+
+                    <th>Cout des semences</th>
+
+                    <td id="resCout">-</td>
+
+                </tr>
+
+                <tr>
+
+                    <th>Durée de production</th>
+
+                    <td id="resDuree">-</td>
+
+                </tr>
+
+                <tr>
+
+                    <th>Rendement estime</th>
+
+                    <td id="resRendement">-</td>
+
+                </tr>
+
+                <tr>
+
+                    <th>Production estimee</th>
+
+                    <td id="resProduction">-</td>
+
+                </tr>
+
+                <tr>
+
+                    <th>Prix de vente (FCFA/kg)</th>
+
+                    <td id="resPrixVente">-</td>
+
+                </tr>
+
+                <tr>
+
+                    <th>Chiffre d'affaires estime</th>
+
+                    <td id="resCA">-</td>
+
+                </tr>
+
+                <tr>
+
+                    <th>Benefice estime</th>
+
+                    <td id="resBenefice">-</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="calculator.js"></script>
+
+</body>
+</html>
