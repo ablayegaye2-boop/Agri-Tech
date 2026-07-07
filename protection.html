@@ -70,7 +70,6 @@
           <span style="font-size:0.82rem; color:#c62828; font-weight:600;">⚠️ Risque élevé en hivernage</span>
         </div>
       </div>
-
       <div class="card" data-type="maladie">
         <div class="card-img" style="background:#fff3e0; font-size:3rem;">🟠</div>
         <div class="card-body">
@@ -214,3 +213,55 @@
       <p style="margin-top:1rem;">Aucune menace trouvée pour ce filtre.</p>
     </div>
   </section>
+  <!-- CONSEILS PRÉVENTION -->
+  <section style="background:var(--vert-pale); padding:3.5rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <h2 class="section-title">Conseils de prévention</h2>
+      <p class="section-subtitle">Mieux vaut prévenir que guérir</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.2rem;">
+        <div class="info-box"><strong>🔄 Rotation des cultures</strong><br>Ne pas cultiver la même plante deux années de suite. Réduit les maladies de 40 à 60%.</div>
+        <div class="info-box"><strong>🌱 Semences saines</strong><br>Utiliser des semences certifiées ou traiter les semences avant le semis avec un fongicide homologué.</div>
+        <div class="info-box"><strong>💧 Irrigation maîtrisée</strong><br>Éviter l'excès d'eau qui favorise les champignons. Arroser au pied des plants, jamais sur les feuilles.</div>
+        <div class="info-box"><strong>🧹 Hygiène des parcelles</strong><br>Éliminer les résidus de récolte et les plantes malades. Ne pas les laisser pourrir sur place.</div>
+        <div class="info-box"><strong>🔍 Surveillance régulière</strong><br>Inspecter visuellement les cultures 2 à 3 fois par semaine, surtout en période humide.</div>
+        <div class="info-box"><strong>🐞 Lutte biologique</strong><br>Favoriser les auxiliaires naturels : coccinelles, chrysopes, araignées qui consomment les ravageurs.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">AGRI<span>·TECH</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p>© 2024 AGRI·TECH — <a href="https://portfolio-website-lime-iota-41.vercel.app/">  droits réservés  </p></a>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function filtrerMenaces(type, btn) {
+      document.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('actif'));
+      btn.classList.add('actif');
+      const cartes = document.querySelectorAll('#grille-menaces .card');
+      let nb = 0;
+      cartes.forEach(carte => {
+        if (type === 'tous' || carte.dataset.type === type) {
+          carte.style.display = 'block';
+          nb++;
+        } else {
+          carte.style.display = 'none';
+        }
+      });
+      document.getElementById('aucun-resultat').style.display = nb === 0 ? 'block' : 'none';
+    }
+  </script>
+
+</body>
+</html>
+
