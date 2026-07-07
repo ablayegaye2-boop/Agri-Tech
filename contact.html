@@ -34,31 +34,22 @@
   <section class="section">
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
 
-      <!-- FORMULAIRE -->
-      <div>
-        <h2 class="section-title">Envoyer un message</h2>
-        <p class="section-subtitle">Nous vous répondons sous 24–48h</p>
+ 
+        
 
-        <div id="message-succes" style="display:none; background:#e8f5e9; border-left:5px solid var(--vert-clair); border-radius:var(--radius); padding:1rem 1.4rem; color:#2e7d32; margin-bottom:1.5rem;">
-          ✅ <strong>Message envoyé !</strong> Nous vous répondrons dans les plus brefs délais.
-        </div>
+      
+         
+       
 
-        <div class="form-group">
-          <label for="nom">Nom complet *</label>
-          <input type="text" id="nom" placeholder="Ex : ouley Ndiaye" />
-        </div>
-
-        <div class="form-group">
-          <label for="email">Adresse email *</label>
-          <input type="email" id="email" placeholder="exemple@email.com" />
-        </div>
-
-        <div class="form-group">
-          <label for="telephone">Téléphone</label>
-          <input type="tel" id="telephone" placeholder="+221 77 000 00 00" />
-        </div>
-
-        <div class="form-group">
+        
+        <!-- FAQ RAPIDE -->
+        <div style="margin-top:2rem;">
+            <h3 style="color:var(--vert-fonce); margin-bottom:1rem;">❓ Questions fréquentes</h3>
+  
+            <div style="border:1px solid #e0e0e0; border-radius:var(--radius); overflow:hidden;">
+              <div onclick="toggleFaq(this)" style="padding:1rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; background:var(--blanc);">
+                <span style="font-weight:600; font-size:0.92rem;">Comment identifier une maladie sur ma culture ?</span>
+                <span>▼</span> <div class="form-group">
           <label for="sujet">Sujet *</label>
           <select id="sujet">
             <option value="">-- Choisir un sujet --</option>
@@ -73,75 +64,7 @@
         <div class="form-group">
           <label for="culture">Culture concernée</label>
           <select id="culture">
-            <option value="">-- Optionnel --</option>
-            <option>Riz</option>
-            <option>Maïs</option>
-            <option>Tomate</option>
-            <option>Oignon</option>
-            <option>Arachide</option>
-            <option>Manioc</option>
-            <option>Mil / Sorgho</option>
-            <option>Autre</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Votre message *</label>
-          <textarea id="message" placeholder="Décrivez votre situation, vos observations, vos questions..."></textarea>
-        </div>
-
-        <button class="btn btn-primary" style="width:100%; padding:0.9rem; font-size:1rem;" onclick="envoyerMessage()">
-          Envoyer le message ✉️
-        </button>
-      </div>
-      <!-- INFOS CONTACT -->
-      <div>
-        <h2 class="section-title">Nos coordonnées</h2>
-        <p class="section-subtitle">Plusieurs façons de nous joindre</p>
-
-        <div style="display:flex; flex-direction:column; gap:1.2rem;">
-
-          <div style="background:var(--blanc); border-radius:var(--radius-lg); padding:1.4rem; box-shadow:var(--ombre); display:flex; gap:1rem; align-items:flex-start;">
-            <div style="font-size:2rem;">📍</div>
-            <div>
-              <strong style="color:var(--vert-fonce);">Adresse</strong><br>
-              <span style="color:var(--gris-texte);"> Sacree coeur 123 Avenue des Agriculteurs<br>Dakar, Sénégal</span>
-Sénégal</span>
-            </div>
-        </div>
-
-        <div style="background:var(--blanc); border-radius:var(--radius-lg); padding:1.4rem; box-shadow:var(--ombre); display:flex; gap:1rem; align-items:flex-start;">
-          <div style="font-size:2rem;">📞</div>
-          <div>
-            <strong style="color:var(--vert-fonce);">Téléphone</strong><br>
-            <span style="color:var(--gris-texte);">+221 771700324<br>Lun–Ven : 8h–17h</span>
-          </div>
-        </div>
-
-        <div style="background:var(--blanc); border-radius:var(--radius-lg); padding:1.4rem; box-shadow:var(--ombre); display:flex; gap:1rem; align-items:flex-start;">
-          <div style="font-size:2rem;">✉️</div>
-          <div>
-            <strong style="color:var(--vert-fonce);">Email</strong><br>
-            <span style="color:var(--gris-texte);">contact@agritech.sn<br>Réponse sous 48h</span>
-          </div>
-        </div>
-        <div style="background:var(--blanc); border-radius:var(--radius-lg); padding:1.4rem; box-shadow:var(--ombre); display:flex; gap:1rem; align-items:flex-start;">
-            <div style="font-size:2rem;">💬</div>
-            <div>
-              <strong style="color:var(--vert-fonce);">WhatsApp</strong><br>
-              <span style="color:var(--gris-texte);">+221 77 1700324<br>Disponible 7j/7</span>
-            </div>
-          </div>
-
-        </div>
-        <!-- FAQ RAPIDE -->
-        <div style="margin-top:2rem;">
-            <h3 style="color:var(--vert-fonce); margin-bottom:1rem;">❓ Questions fréquentes</h3>
-  
-            <div style="border:1px solid #e0e0e0; border-radius:var(--radius); overflow:hidden;">
-              <div onclick="toggleFaq(this)" style="padding:1rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; background:var(--blanc);">
-                <span style="font-weight:600; font-size:0.92rem;">Comment identifier une maladie sur ma culture ?</span>
-                <span>▼</span>
+            <option value="">
               </div>
               <div style="display:none; padding:1rem; background:var(--gris-clair); font-size:0.88rem; color:var(--gris-texte);">
                 Consultez notre page Protection des cultures. Prenez des photos claires et envoyez-les via ce formulaire avec la description des symptômes.
