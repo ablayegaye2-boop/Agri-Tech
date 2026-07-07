@@ -174,6 +174,38 @@ Sénégal</span>
   
       </div>
     </section>
+    <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">AGRI<span>·TECH</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="protection.html">Protection</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      
+    </ul>
+    <p>© 2024 AGRI·TECH — <a href="https://portfolio-website-lime-iota-41.vercel.app/">  droits réservés  </p></a>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+
+    function envoyerMessage() {
+      const nom = document.getElementById('nom').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const sujet = document.getElementById('sujet').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!nom || !email || !sujet || !message) {
+        alert('⚠️ Veuillez remplir tous les champs obligatoires (*)');
+        return;
+      }
+      if (!email.includes('@')) {
+        alert('⚠️ Veuillez entrer une adresse email valide.');
+        return;
+      }
+    }
 
     </body>
       </html>
