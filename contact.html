@@ -205,7 +205,30 @@ Sénégal</span>
         alert('⚠️ Veuillez entrer une adresse email valide.');
         return;
       }
+      // Simuler l'envoi
+      document.getElementById('message-succes').style.display = 'block';
+      document.getElementById('nom').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('telephone').value = '';
+      document.getElementById('sujet').value = '';
+      document.getElementById('culture').value = '';
+      document.getElementById('message').value = '';
+
+      window.scrollTo({ top: 300, behavior: 'smooth' });
     }
 
-    </body>
-      </html>
+    function toggleFaq(el) {
+      const contenu = el.nextElementSibling;
+      const fleche = el.querySelector('span:last-child');
+      if (contenu.style.display === 'none') {
+        contenu.style.display = 'block';
+        fleche.textContent = '▲';
+      } else {
+        contenu.style.display = 'none';
+        fleche.textContent = '▼';
+      }
+    }
+
+  </script>
+</body>
+</html>
