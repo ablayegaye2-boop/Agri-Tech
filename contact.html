@@ -33,6 +33,65 @@
   <!-- CONTENU CONTACT -->
   <section class="section">
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
+<!-- FORMULAIRE -->
+<div>
+    <h2 class="section-title">Envoyer un message</h2>
+    <p class="section-subtitle">Nous vous répondons sous 24–48h</p>
+
+    <div id="message-succes" style="display:none; background:#e8f5e9; border-left:5px solid var(--vert-clair); border-radius:var(--radius); padding:1rem 1.4rem; color:#2e7d32; margin-bottom:1.5rem;">
+      ✅ <strong>Message envoyé !</strong> Nous vous répondrons dans les plus brefs délais.
+    </div>
+
+    <div class="form-group">
+      <label for="nom">Nom complet *</label>
+      <input type="text" id="nom" placeholder="Ex : ouley Ndiaye" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Adresse email *</label>
+      <input type="email" id="email" placeholder="exemple@email.com" />
+    </div>
+    <div class="form-group">
+        <label for="telephone">Téléphone</label>
+        <input type="tel" id="telephone" placeholder="+221 77 000 00 00" />
+      </div>
+
+      <div class="form-group">
+        <label for="sujet">Sujet *</label>
+        <select id="sujet">
+          <option value="">-- Choisir un sujet --</option>
+          <option value="conseil">Conseil sur une culture</option>
+          <option value="maladie">Identification d'une maladie</option>
+          <option value="calendrier">Question sur le calendrier</option>
+          <option value="ressource">Demande de ressource</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="culture">Culture concernée</label>
+        <select id="culture">
+          <option value="">-- Optionnel --</option>
+          <option>Riz</option>
+          <option>Maïs</option>
+          <option>Tomate</option>
+          <option>Oignon</option>
+          <option>Arachide</option>
+            <option>Manioc</option>
+            <option>Mil / Sorgho</option>
+            <option>Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Votre message *</label>
+          <textarea id="message" placeholder="Décrivez votre situation, vos observations, vos questions..."></textarea>
+        </div>
+
+        <button class="btn btn-primary" style="width:100%; padding:0.9rem; font-size:1rem;" onclick="envoyerMessage()">
+          Envoyer le message ✉️
+        </button>
+      </div>
 
  
         
