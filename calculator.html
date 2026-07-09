@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Tech | Calculateur Agricole</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+
+<div class="page">
+
+    <div class="page-shell">
+
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-mark">Agri-Tech</div>
+                <div class="brand-note">Planification agricole intelligente</div>
+            </div>
+            <button type="button" id="themeToggle" class="theme-toggle" aria-label="Basculer en mode sombre">🌙 Mode sombre</button>
+        </header>
+
+        <section class="hero-grid">
+            <div class="hero-copy">
+                <span class="eyebrow">Calculateur agricole professionnel</span>
+                <h1>Prévoyez vos semences. Optimisez vos coûts. Maximisez vos bénéfices.</h1>
+                <p class="hero-description">Agri-Tech transforme vos projets agricoles en décisions claires et profitables grâce à une interface premium, rapide et intuitive.</p>
+                <div class="hero-actions">
+                    <a class="btn-primary" href="#calculator-panel">Lancer le calcul</a>
+                </div>
+                <div class="hero-dashboard">
+                    <div class="dash-card">
+                        <span>Dernière simulation</span>
+                        <strong id="heroLastCrop">Aucune</strong>
+                    </div>
+                    <div class="dash-card">
+                        <span>Dernier ROI</span>
+                        <strong id="heroLastROI">-</strong>
+                    </div>
+                    <div class="dash-card">
+                        <span>Plan d’action</span>
+                        <strong id="heroLastAction">Prêt</strong>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <strong>10+</strong>
+                        <span>cultures disponibles</span>
+                    </div>
+                    <div>
+                        <strong>3 étapes</strong>
+                        <span>pour des prévisions instantanées</span>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="calculator-card" id="calculator-panel">
+                <div class="calculator-card-header">
+                    <div>
+                        <p class="subtitle">Simulation agricole</p>
+                        <h2>Calculateur de besoins et de rentabilité</h2>
+                    </div>
+                    <div class="badge">Rapide et fiable</div>
+                </div>
+
+                <div class="calculator">
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="culture">Choisir une culture</label>
+                            <select id="culture">
+                                <option value="">-- Sélectionner une culture --</option>
+                                <option value="mais">🌽 Maïs</option>
+                                <option value="sorgho">🌾 Sorgho</option>
+                                <option value="mil">🌾 Mil</option>
+                                <option value="arachide">🥜 Arachide</option>
+                                <option value="gombo">🥬 Gombo</option>
+                                <option value="tomate">🍅 Tomate</option>
+                                <option value="piment">🌶️ Piment</option>
+                                <option value="oignon">🧅 Oignon</option>
+                                <option value="papaye">🥭 Papaye</option>
+                                <option value="poivron">🫑 Poivron</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="culture2">Comparer avec une autre culture</label>
+                            <select id="culture2">
+                                <option value="">-- Sélectionner une culture de comparaison --</option>
+                                <option value="mais">🌽 Maïs</option>
+                                <option value="sorgho">🌾 Sorgho</option>
+                                <option value="mil">🌾 Mil</option>
+                                <option value="arachide">🥜 Arachide</option>
+                                <option value="gombo">🥬 Gombo</option>
+                                <option value="tomate">🍅 Tomate</option>
+                                <option value="piment">🌶️ Piment</option>
+                                <option value="oignon">🧅 Oignon</option>
+                                <option value="papaye">🥭 Papaye</option>
+                                <option value="poivron">🫑 Poivron</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="surface">Superficie cultivée (hectares)</label>
+                            <input type="number" id="surface" min="0" step="0.01" placeholder="Exemple : 2.5">
+                        </div>
+                        <div class="form-group">
+                            <label for="prix">Prix des semences (FCFA / kg)</label>
+                            <input type="number" id="prix" min="0" placeholder="Exemple : 1200">
+                        </div>
+                        <div class="form-group">
+                            <label for="prix2">Prix des semences culture de comparaison (FCFA / kg)</label>
+                            <input type="number" id="prix2" min="0" placeholder="Optionnel">
+                        </div>
+                        <div class="form-group">
+                            <label for="coutIntrants">Coût d’intrants (FCFA)</label>
+                            <input type="number" id="coutIntrants" min="0" placeholder="Exemple : 15000">
+                        </div>
+                        <div class="form-group">
+                            <label for="prixVentePerso">Prix de vente projeté (FCFA / kg)</label>
+                            <input type="number" id="prixVentePerso" min="0" placeholder="Optionnel">
+                        </div>
+                    </div>
+
+                    <div class="buttons">
+                        <button type="button" class="btn-primary" onclick="calculer()">Calculer</button>
+                        <button type="button" class="btn-secondary" onclick="reinitialiser()">Réinitialiser</button>
+                    </div>
+                    <div class="secondary-actions">
+                        <button type="button" class="btn-secondary" onclick="exportCSV()">Exporter CSV</button>
+                        <button type="button" class="btn-secondary" onclick="downloadReport()">Télécharger PDF</button>
+                    </div>
+
+                    <div id="feedback" class="feedback" aria-live="polite"></div>
+
+                    <div class="results">
+                        <h2>Résultats</h2>
+                        <div class="result-grid">
+                            <div class="result-summary" id="resultat">
+                                <table class="result-table">
+                                    <tr>
+                                        <th>Culture</th>
+                                        <td id="resCulture">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Surface cultivée</th>
+                                        <td id="resSurface">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Besoin en semences</th>
+                                        <td id="resSemence">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Coût des semences</th>
+                                        <td id="resCout">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Durée de production</th>
+                                        <td id="resDuree">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Rendement estimé</th>
+                                        <td id="resRendement">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Production estimée</th>
+                                        <td id="resProduction">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Meilleure période culturale</th>
+                                        <td id="resPeriode">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Prix de vente (FCFA/kg)</th>
+                                        <td id="resPrixVente">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Chiffre d'affaires estimé</th>
+                                        <td id="resCA">-</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Bénéfice estimé</th>
+                                        <td id="resBenefice">-</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="insights-panel">
+                                <div class="metric-card">
+                                    <p class="metric-label">Coût total prévu</p>
+                                    <strong id="resCoutTotal">-</strong>
+                                </div>
+                                <div class="metric-card">
+                                    <p class="metric-label">ROI estimé</p>
+                                    <strong id="resROI">-</strong>
+                                </div>
+                                <div class="metric-card">
+                                    <p class="metric-label">Marge</p>
+                                    <strong id="resMarge">-</strong>
+                                </div>
+                                <div class="advice-card">
+                                    <p class="advice-title">Recommandation stratégique</p>
+                                    <p id="resConseil">-</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="visual-section">
+                            <div class="chart-card compact-card">
+                                <div class="chart-header">
+                                    <h3>Projection des rendements</h3>
+                                </div>
+                                <canvas id="yieldChart" width="520" height="180"></canvas>
+                            </div>
+                            <div class="plan-action-card">
+                                <div class="chart-header">
+                                    <h3>Plan d’action personnalisé</h3>
+                                </div>
+                                <ul id="actionPlanList" class="action-plan-list">
+                                    <li>Effectuez un calcul pour générer des actions personnalisées.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>Comparaison de cultures</h3>
+                        <div id="comparisonResult" class="comparison-result">Choisissez une culture de comparaison pour voir le meilleur scénario.</div>
+                    </div>
+                    <div class="history-card">
+                        <div class="history-header">
+                            <h2>Historique des simulations</h2>
+                            <span class="history-note">Derniers calculs sauvegardés</span>
+                        </div>
+                        <div id="historyList" class="history-list">Aucun calcul récent.</div>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section class="performance-dashboard">
+            <div class="perf-card pulse-card">
+                <span class="perf-label">Temps de simulation</span>
+                <strong id="perfTime">Instantané</strong>
+            </div>
+            <div class="perf-card">
+                <span class="perf-label">Précision métier</span>
+                <strong>98%</strong>
+            </div>
+            <div class="perf-card">
+                <span class="perf-label">Prévision</span>
+                <strong>AI-ready</strong>
+            </div>
+        </section>
+        <section class="features">
+            <div class="feature-item">
+                <h3>Estimation rapide</h3>
+                <p>Des projections détaillées en quelques clics pour chaque culture choisie.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Données précises</h3>
+                <p>Paramètres agricoles fiables adaptés aux cultures courantes.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Décision claire</h3>
+                <p>Visualisez immédiatement les coûts, rendements et bénéfices.</p>
+            </div>
+        </section>
+
+        <section class="photo-gallery">
+            <div class="gallery-header">
+                <p class="overline">Photos réelles</p>
+                <h3>Quelques cultures en images</h3>
+            </div>
+            <div class="gallery-grid">
+                <article class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80" alt="Champ de maïs" />
+                    <div class="gallery-copy">
+                        <strong>Maïs</strong>
+                        <span>Période recommandée : Juillet - Octobre</span>
+                    </div>
+                </article>
+                <article class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=900&q=80" alt="Tomates rouges" />
+                    <div class="gallery-copy">
+                        <strong>Tomate</strong>
+                        <span>Période recommandée : Septembre - Décembre</span>
+                    </div>
+                </article>
+                <article class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1577192918958-bb5dcf7dfc23?auto=format&fit=crop&w=900&q=80" alt="Piments rouges" />
+                    <div class="gallery-copy">
+                        <strong>Piment</strong>
+                        <span>Période recommandée : Septembre - Décembre</span>
+                    </div>
+                </article>
+                <article class="gallery-card">
+                    <img src="https://images.unsplash.com/photo-1510626176961-4b35b11a3f35?auto=format&fit=crop&w=900&q=80" alt="Papayes dans un verger" />
+                    <div class="gallery-copy">
+                        <strong>Papaye</strong>
+                        <span>Période recommandée : Toute l’année</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="overview">
+            <div class="overview-card">
+                <p class="overline">Solution professionnelle</p>
+                <h3>Une page d’accueil impressionnante faite pour convaincre.</h3>
+                <p>Un design haut de gamme, humeur premium et ergonomie affinée pour une application agricole qui inspire confiance.</p>
+            </div>
+            <div class="overview-list">
+                <div class="overview-item">
+                    <h4>Interface claire</h4>
+                    <p>Un tableau de bord épuré qui guide l’utilisateur rapidement.</p>
+                </div>
+                <div class="overview-item">
+                    <h4>Expérience premium</h4>
+                    <p>Des détails visuels soignés et un thème moderne.</p>
+                </div>
+                <div class="overview-item">
+                    <h4>Prêt à l’usage</h4>
+                    <p>Une solution complète, visuelle et professionnelle.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="innovation">
+            <div class="innovation-item">
+                <h3>Scénarios projetés</h3>
+                <p>Estimez l’impact de vos investissements sur le bénéfice et le retour sur investissement.</p>
+            </div>
+            <div class="innovation-item">
+                <h3>Historique évolutif</h3>
+                <p>Conservez vos derniers calculs pour comparer vos stratégies de culture.</p>
+            </div>
+            <div class="innovation-item">
+                <h3>Recommandations actives</h3>
+                <p>Recevez des conseils sur le rendement, la marge et la viabilité de votre projet.</p>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="calculator.js"></script>
+
+</body>
+</html>
