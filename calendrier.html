@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AGRI·TECH — Calendrier agricole</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">AGRI<span>·TECH</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="calendrier.html" class="active">Calendrier</a></li>
+      <li><a href="protection.html">Protection</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- EN-TÊTE -->
+  <section style="background: linear-gradient(135deg, var(--vert-fonce), var(--vert-moyen)); color:var(--blanc); padding:3.5rem 2rem; text-align:center;">
+    <h1 style="font-size:2.2rem; font-weight:800; margin-bottom:0.7rem;">📅 Calendrier Agricole</h1>
+    <p style="color:rgba(255,255,255,0.85); max-width:580px; margin:0 auto;">Planifiez vos travaux agricoles mois par mois : semis, fertilisation, récolte et traitements.</p>
+  </section>
+
+  <!-- LÉGENDE -->
+  <section style="background:var(--blanc); padding:1.5rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:1rem; align-items:center;">
+      <span style="font-weight:600; color:var(--vert-fonce);">Légende :</span>
+      <span class="badge badge-printemps">🌧️ Hivernage (Jun–Oct)</span>
+      <span class="badge badge-hiver">☀️ Saison sèche (Nov–Mai)</span>
+      <span style="background:#f3e5f5; color:#6a1b9a; padding:0.25rem 0.85rem; border-radius:50px; font-size:0.8rem; font-weight:600;">🌱 Semis</span>
+      <span style="background:#e8f5e9; color:#1b5e20; padding:0.25rem 0.85rem; border-radius:50px; font-size:0.8rem; font-weight:600;">🌾 Récolte</span>
+      <span style="background:#fff3e0; color:#e65100; padding:0.25rem 0.85rem; border-radius:50px; font-size:0.8rem; font-weight:600;">💧 Irrigation</span>
+      <span style="background:#fce4ec; color:#880e4f; padding:0.25rem 0.85rem; border-radius:50px; font-size:0.8rem; font-weight:600;">🛡️ Traitement</span>
+    </div>
+  </section>
+
+  <!-- FILTRES -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="filtres">
+      <button class="filtre-btn actif" onclick="filtrerMois('tous', this)">Tous les mois</button>
+      <button class="filtre-btn" onclick="filtrerMois('hivernage', this)">🌧️ Hivernage</button>
+      <button class="filtre-btn" onclick="filtrerMois('seche', this)">☀️ Saison sèche</button>
+    </div>
+  </section>
+
+  <!-- GRILLE 12 MOIS -->
+  <section class="section" style="padding-top:1.5rem;">
+    <div class="calendrier-grid" id="grille-mois" style="grid-template-columns: repeat(auto-fit, minmax(240px,1fr));">
+
+      <div class="mois-card" data-saison="seche">
+        <h3>❄️ Janvier</h3>
+        <span class="badge badge-hiver" style="margin-bottom:0.8rem; display:inline-block;">Saison sèche</span>
+        <ul>
+          <li>🌱 Semis oignon en pépinière</li>
+          <li>💧 Irrigation cultures maraîchères</li>
+          <li>🌾 Récolte mil et sorgho tardif</li>
+          <li>🛡️ Traitement contre les pucerons</li>
+          <li>🌱 Repiquage tomate</li>
+        </ul>
+      </div>
+
+      <div class="mois-card" data-saison="seche">
+        <h3>🌤️ Février</h3>
+        <span class="badge badge-hiver" style="margin-bottom:0.8rem; display:inline-block;">Saison sèche</span>
+        <ul>
+          <li>🌾 Récolte oignon</li>
+          <li>💧 Irrigation intensive tomate</li>
+          <li>🛡️ Traitement antifongique tomate</li>
+          <li>🌱 Semis haricot vert</li>
+          <li>🌱 Préparation pépinière riz</li>
+        </ul>
+      </div>
+
+      <div class="mois-card" data-saison="seche">
+        <h3>🌸 Mars</h3>
+        <span class="badge badge-hiver" style="margin-bottom:0.8rem; display:inline-block;">Saison sèche</span>
+        <ul>
+          <li>🌾 Récolte tomate</li>
+          <li>🌾 Récolte haricot vert</li>
+          <li>🌱 Semis arachide de contre-saison</li>
+          <li>💧 Irrigation mangue (floraison)</li>
+          <li>🛡️ Traitement verger</li>
+        </ul>
+      </div>
+
+      <div class="mois-card" data-saison="seche">
+        <h3>🌼 Avril</h3>
+        <span class="badge badge-hiver" style="margin-bottom:0.8rem; display:inline-block;">Saison sèche</span>
+        <ul>
+          <li>🌱 Préparation des sols</li>
+          <li>🌱 Semis pépinière maïs</li>
+          <li>💧 Irrigation maraîchage</li>
+          <li>🌾 Récolte arachide contre-saison</li>
+          <li>🛡️ Traitement préventif</li>
+        </ul>
+      </div>
+
+      <div class="mois-card" data-saison="seche">
+        <h3>☀️ Mai</h3>
+        <span class="badge badge-hiver" style="margin-bottom:0.8rem; display:inline-block;">Saison sèche</span>
+        <ul>
+          <li>🌱 Labour et préparation sols</li>
+          <li>🌱 Semis précoce maïs (zones humides)</li>
+          <li>💧 Arrêt progressif irrigation</li>
+          <li>🌾 Récolte mangue précoce</li>
+          <li>🛡️ Traitement termites</li>
+        </ul>
+      </div>
+
+      <div class="mois-card" data-saison="hivernage" style="border-top-color: var(--jaune-or);">
+        <h3>🌧️ Juin</h3>
+        <span class="badge badge-printemps" style="margin-bottom:0.8rem; display:inline-block;">Hivernage</span>
+        <ul>
+          <li>🌱 Semis maïs (début pluies)</li>
+          <li>🌱 Préparation rizières</li>
+          <li>🌱 Semis mil et sorgho</li>
+          <li>🛡️ Traitement préventif tomate</li>
+          <li>🌱 Désherbage précoce</li>
+        </ul>
+      </div>
+
+      <div class="mois-card" data-saison="hivernage" style="border-top-color: var(--jaune-or);">
+        <h3>☔ Juillet</h3>
+        <span class="badge badge-printemps" style="margin-bottom:0.8rem; display:inline-block;">Hivernage</span>
+        <ul>
+          <li>🌱 Repiquage riz</li>
+          <li>🌱 Semis arachide</li>
+          <li>🌱 Fertilisation maïs (urée)</li>
+          <li>🛡️ Surveillance mildou</li>
+          <li>🌱 Semis niébé</li>
+        </ul>
+      </div>
+
+      <div class="mois-card" data-saison="hivernage" style="border-top-color: var(--jaune-or);">
+        <h3>🌦️ Août</h3>
+        <span class="badge badge-printemps" style="margin-bottom:0.8rem; display:inline-block;">Hivernage</span>
+        <ul>
+          <li>🌾 Récolte maïs précoce</li>
+          <li>🌱 Buttage arachide</li>
+          <li>💧 Gestion eau rizières</li>
+          <li>🛡️ Traitement antifongique</li>
+          <li>🌱 Désherbage riz</li>
+        </ul>
+      </div>
+
+      <div class="mois-card" data-saison="hivernage" style="border-top-color: var(--jaune-or);">
+        <h3>🌤️ Septembre</h3>
+        <span class="badge badge-printemps" style="margin-bottom:0.8rem; display:inline-block;">Hivernage</span>
+        <ul>
+          <li>🌾 Récolte maïs principal</li>
+          <li>🌾 Récolte niébé</li>
+          <li>🛡️ Traitement riz (fin tallage)</li>
+          <li>🌱 Semis oignon pépinière</li>
+          <li>🌱 Préparation cultures sèches</li>
+        </ul>
+      </div>
+
+      <div class="mois-card" data-saison="hivernage" style="border-top-color: var(--jaune-or);">
+        <h3>🍂 Octobre</h3>
+        <span class="badge badge-printemps" style="margin-bottom:0.8rem; display:inline-block;">Hivernage</span>
+        <ul>
+          <li>🌾 Récolte riz</li>
+          <li>🌾 Récolte arachide</li>
+          <li>🌱 Séchage et stockage</li>
+          <li>🛡️ Traitement post-récolte</li>
+          <li>🌱 Labour post-récolte</li>
+        </ul>
+      </div>
+
+      <div class="mois-card" data-saison="seche">
+        <h3>🌬️ Novembre</h3>
+        <span class="badge badge-hiver" style="margin-bottom:0.8rem; display:inline-block;">Saison sèche</span>
+        <ul>
+          <li>🌱 Semis maraîchage (tomate, chou)</li>
+          <li>🌱 Repiquage oignon</li>
+          <li>💧 Installation irrigation</li>
+          <li>🌾 Récolte mil tardif</li>
+          <li>🛡️ Traitement semences stockées</li>
+        </ul>
+      </div>
+
+      <div class="mois-card" data-saison="seche">
+        <h3>🎄 Décembre</h3>
+        <span class="badge badge-hiver" style="margin-bottom:0.8rem; display:inline-block;">Saison sèche</span>
+        <ul>
+          <li>💧 Irrigation oignon et tomate</li>
+          <li>🌱 Semis carotte et haricot</li>
+          <li>🛡️ Traitement contre nématodes</li>
+          <li>🌾 Début récolte légumes feuilles</li>
+          <li>🌱 Entretien vergers</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TABLEAU RÉCAPITULATIF -->
+  <section style="background:var(--blanc); padding:3rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <h2 class="section-title">Récapitulatif des cultures par saison</h2>
+      <p class="section-subtitle">Vue d'ensemble pour planifier votre année agricole</p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.92rem;">
+          <thead>
+            <tr style="background:var(--vert-fonce); color:var(--blanc);">
+              <th style="padding:0.9rem 1rem; text-align:left;">Culture</th>
+              <th style="padding:0.9rem 1rem; text-align:center;">Semis</th>
+              <th style="padding:0.9rem 1rem; text-align:center;">Entretien</th>
+              <th style="padding:0.9rem 1rem; text-align:center;">Récolte</th>
+              <th style="padding:0.9rem 1rem; text-align:center;">Durée</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #e0e0e0;">
+              <td style="padding:0.8rem 1rem; font-weight:600;">🌾 Riz</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#2e7d32;">Juin – Juillet</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#e65100;">Août – Sept.</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#bf360c;">Octobre</td>
+              <td style="padding:0.8rem 1rem; text-align:center;">120–150 j</td>
+            </tr>
+            <tr style="background:#f9f9f9; border-bottom:1px solid #e0e0e0;">
+              <td style="padding:0.8rem 1rem; font-weight:600;">🌽 Maïs</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#2e7d32;">Juin – Juillet</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#e65100;">Juillet – Août</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#bf360c;">Août – Sept.</td>
+              <td style="padding:0.8rem 1rem; text-align:center;">90–120 j</td>
+            </tr>
+            <tr style="border-bottom:1px solid #e0e0e0;">
+              <td style="padding:0.8rem 1rem; font-weight:600;">🥜 Arachide</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#2e7d32;">Juin – Juillet</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#e65100;">Août</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#bf360c;">Octobre</td>
+              <td style="padding:0.8rem 1rem; text-align:center;">90–120 j</td>
+            </tr>
+            <tr style="background:#f9f9f9; border-bottom:1px solid #e0e0e0;">
+              <td style="padding:0.8rem 1rem; font-weight:600;">🍅 Tomate</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#2e7d32;">Nov. – Déc.</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#e65100;">Déc. – Fév.</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#bf360c;">Fév. – Mars</td>
+              <td style="padding:0.8rem 1rem; text-align:center;">60–90 j</td>
+            </tr>
+            <tr style="border-bottom:1px solid #e0e0e0;">
+              <td style="padding:0.8rem 1rem; font-weight:600;">🧅 Oignon</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#2e7d32;">Oct. – Nov.</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#e65100;">Nov. – Jan.</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#bf360c;">Fév. – Mars</td>
+              <td style="padding:0.8rem 1rem; text-align:center;">90–120 j</td>
+            </tr>
+            <tr style="background:#f9f9f9; border-bottom:1px solid #e0e0e0;">
+              <td style="padding:0.8rem 1rem; font-weight:600;">🌿 Mil / Sorgho</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#2e7d32;">Juin – Juillet</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#e65100;">Août – Sept.</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#bf360c;">Oct. – Nov.</td>
+              <td style="padding:0.8rem 1rem; text-align:center;">90–110 j</td>
+            </tr>
+            <tr style="border-bottom:1px solid #e0e0e0;">
+              <td style="padding:0.8rem 1rem; font-weight:600;">🍠 Manioc</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#2e7d32;">Toute l'année</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#e65100;">Continu</td>
+              <td style="padding:0.8rem 1rem; text-align:center; color:#bf360c;">8–18 mois</td>
+              <td style="padding:0.8rem 1rem; text-align:center;">8–18 mois</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">AGRI<span>·TECH</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="protection.html">Protection</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p>© 2024 AGRI·TECH — <a href="https://portfolio-website-lime-iota-41.vercel.app/">  droits réservés  </p></a>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function filtrerMois(saison, btn) {
+      document.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('actif'));
+      btn.classList.add('actif');
+      const cartes = document.querySelectorAll('#grille-mois .mois-card');
+      cartes.forEach(carte => {
+        if (saison === 'tous' || carte.dataset.saison === saison) {
+          carte.style.display = 'block';
+        } else {
+          carte.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
