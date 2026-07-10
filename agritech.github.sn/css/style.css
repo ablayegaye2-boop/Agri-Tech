@@ -179,6 +179,32 @@
     margin-bottom: 2.5rem;
     font-size: 1rem;
   }
+
+  .overview-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .overview-card {
+    background: linear-gradient(135deg, var(--vert-pale), #fdfdfd);
+    border: 1px solid #dcefe3;
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.1rem;
+    box-shadow: var(--ombre);
+  }
+
+  .overview-card strong {
+    display: block;
+    font-size: 1.35rem;
+    color: var(--vert-fonce);
+  }
+
+  .overview-card span {
+    color: var(--gris-texte);
+    font-size: 0.9rem;
+  }
   
   /* === CARTES (cards) === */
   .cards-grid {
