@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AGRI·TECH — Contact</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">AGRI<span>·TECH</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="protection.html">Protection</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" type="button" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- EN-TÊTE -->
+  <section style="background: linear-gradient(135deg, var(--vert-fonce), var(--vert-moyen)); color:var(--blanc); padding:3.5rem 2rem; text-align:center;">
+    <h1 style="font-size:2.2rem; font-weight:800; margin-bottom:0.7rem;">📞 Contactez-nous</h1>
+    <p style="color:rgba(255,255,255,0.85); max-width:580px; margin:0 auto;">Une question sur vos cultures ? Besoin d'un conseil personnalisé ? Notre équipe vous répond rapidement.</p>
+  </section>
+
+  <!-- CONTENU CONTACT -->
+  <section class="section">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start;">
+
+      <!-- FORMULAIRE -->
+      <div>
+        <h2 class="section-title">Envoyer un message</h2>
+        <p class="section-subtitle">Nous vous répondons sous 24–48h</p>
+
+        <div id="message-succes" style="display:none; background:#e8f5e9; border-left:5px solid var(--vert-clair); border-radius:var(--radius); padding:1rem 1.4rem; color:#2e7d32; margin-bottom:1.5rem;">
+          ✅ <strong>Message envoyé !</strong> Nous vous répondrons dans les plus brefs délais.
+        </div>
+
+        <div class="form-group">
+          <label for="nom">Nom complet *</label>
+          <input type="text" id="nom" placeholder="Ex : ouley Ndiaye" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse email *</label>
+          <input type="email" id="email" placeholder="exemple@email.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="telephone">Téléphone</label>
+          <input type="tel" id="telephone" placeholder="+221 77 000 00 00" />
+        </div>
+
+        <div class="form-group">
+          <label for="sujet">Sujet *</label>
+          <select id="sujet">
+            <option value="">-- Choisir un sujet --</option>
+            <option value="conseil">Conseil sur une culture</option>
+            <option value="maladie">Identification d'une maladie</option>
+            <option value="calendrier">Question sur le calendrier</option>
+            <option value="ressource">Demande de ressource</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="culture">Culture concernée</label>
+          <select id="culture">
+            <option value="">-- Optionnel --</option>
+            <option>Riz</option>
+            <option>Maïs</option>
+            <option>Tomate</option>
+            <option>Oignon</option>
+            <option>Arachide</option>
+            <option>Manioc</option>
+            <option>Mil / Sorgho</option>
+            <option>Autre</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Votre message *</label>
+          <textarea id="message" placeholder="Décrivez votre situation, vos observations, vos questions..."></textarea>
+        </div>
+
+        <button class="btn btn-primary" style="width:100%; padding:0.9rem; font-size:1rem;" onclick="envoyerMessage()">
+          Envoyer le message ✉️
+        </button>
+      </div>
+
+      <!-- INFOS CONTACT -->
+      <div>
+        <h2 class="section-title">Nos coordonnées</h2>
+        <p class="section-subtitle">Plusieurs façons de nous joindre</p>
+
+        <div style="display:flex; flex-direction:column; gap:1.2rem;">
+
+          <div style="background:var(--blanc); border-radius:var(--radius-lg); padding:1.4rem; box-shadow:var(--ombre); display:flex; gap:1rem; align-items:flex-start;">
+            <div style="font-size:2rem;">📍</div>
+            <div>
+              <strong style="color:var(--vert-fonce);">Adresse</strong><br>
+              <span style="color:var(--gris-texte);"> Sacree coeur 123 Avenue des Agriculteurs<br>Dakar, Sénégal</span>
+            </div>
+          </div>
+
+          <div style="background:var(--blanc); border-radius:var(--radius-lg); padding:1.4rem; box-shadow:var(--ombre); display:flex; gap:1rem; align-items:flex-start;">
+            <div style="font-size:2rem;">📞</div>
+            <div>
+              <strong style="color:var(--vert-fonce);">Téléphone</strong><br>
+              <span style="color:var(--gris-texte);">+221 771700324<br>Lun–Ven : 8h–17h</span>
+            </div>
+          </div>
+
+          <div style="background:var(--blanc); border-radius:var(--radius-lg); padding:1.4rem; box-shadow:var(--ombre); display:flex; gap:1rem; align-items:flex-start;">
+            <div style="font-size:2rem;">✉️</div>
+            <div>
+              <strong style="color:var(--vert-fonce);">Email</strong><br>
+              <span style="color:var(--gris-texte);">contact@agritech.sn<br>Réponse sous 48h</span>
+            </div>
+          </div>
+
+          <div style="background:var(--blanc); border-radius:var(--radius-lg); padding:1.4rem; box-shadow:var(--ombre); display:flex; gap:1rem; align-items:flex-start;">
+            <div style="font-size:2rem;">💬</div>
+            <div>
+              <strong style="color:var(--vert-fonce);">WhatsApp</strong><br>
+              <span style="color:var(--gris-texte);">+221 77 1700324<br>Disponible 7j/7</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- FAQ RAPIDE -->
+        <div style="margin-top:2rem;">
+          <h3 style="color:var(--vert-fonce); margin-bottom:1rem;">❓ Questions fréquentes</h3>
+
+          <div style="border:1px solid #e0e0e0; border-radius:var(--radius); overflow:hidden;">
+            <div onclick="toggleFaq(this)" style="padding:1rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; background:var(--blanc);">
+              <span style="font-weight:600; font-size:0.92rem;">Comment identifier une maladie sur ma culture ?</span>
+              <span>▼</span>
+            </div>
+            <div style="display:none; padding:1rem; background:var(--gris-clair); font-size:0.88rem; color:var(--gris-texte);">
+              Consultez notre page Protection des cultures. Prenez des photos claires et envoyez-les via ce formulaire avec la description des symptômes.
+            </div>
+          </div>
+
+          <div style="border:1px solid #e0e0e0; border-radius:var(--radius); overflow:hidden; margin-top:0.5rem;">
+            <div onclick="toggleFaq(this)" style="padding:1rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; background:var(--blanc);">
+              <span style="font-weight:600; font-size:0.92rem;">Proposez-vous des formations terrain ?</span>
+              <span>▼</span>
+            </div>
+            <div style="display:none; padding:1rem; background:var(--gris-clair); font-size:0.88rem; color:var(--gris-texte);">
+              Oui ! Nous organisons des sessions de formation dans plusieurs régions. Contactez-nous pour connaître le calendrier des prochaines formations.
+            </div>
+          </div>
+
+          <div style="border:1px solid #e0e0e0; border-radius:var(--radius); overflow:hidden; margin-top:0.5rem;">
+            <div onclick="toggleFaq(this)" style="padding:1rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; background:var(--blanc);">
+              <span style="font-weight:600; font-size:0.92rem;">Les conseils sont-ils gratuits ?</span>
+              <span>▼</span>
+            </div>
+            <div style="display:none; padding:1rem; background:var(--gris-clair); font-size:0.88rem; color:var(--gris-texte);">
+              Oui, tous les conseils de base sont gratuits. Nous croyons que l'accès à l'information agricole doit être universel.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">AGRI<span>·TECH</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="protection.html">Protection</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      
+    </ul>
+    <p>© 2024 AGRI·TECH — <a href="https://portfolio-website-lime-iota-41.vercel.app/">  droits réservés  </p></a>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+
+    function envoyerMessage() {
+      const nom = document.getElementById('nom').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const sujet = document.getElementById('sujet').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (!nom || !email || !sujet || !message) {
+        alert('⚠️ Veuillez remplir tous les champs obligatoires (*)');
+        return;
+      }
+
+      if (!email.includes('@')) {
+        alert('⚠️ Veuillez entrer une adresse email valide.');
+        return;
+      }
+
+      // Simuler l'envoi
+      document.getElementById('message-succes').style.display = 'block';
+      document.getElementById('nom').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('telephone').value = '';
+      document.getElementById('sujet').value = '';
+      document.getElementById('culture').value = '';
+      document.getElementById('message').value = '';
+
+      window.scrollTo({ top: 300, behavior: 'smooth' });
+    }
+
+    function toggleFaq(el) {
+      const contenu = el.nextElementSibling;
+      const fleche = el.querySelector('span:last-child');
+      if (contenu.style.display === 'none') {
+        contenu.style.display = 'block';
+        fleche.textContent = '▲';
+      } else {
+        contenu.style.display = 'none';
+        fleche.textContent = '▼';
+      }
+    }
+
+  </script>
+</body>
+</html>

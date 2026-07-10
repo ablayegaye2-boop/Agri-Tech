@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AGRI·TECH — Cultures</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">AGRI<span>·TECH</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="cultures.html" class="active">Cultures</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="protection.html">Protection</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" type="button" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- EN-TÊTE PAGE -->
+  <section style="background: linear-gradient(135deg, var(--vert-fonce), var(--vert-moyen)); color:var(--blanc); padding:3.5rem 2rem; text-align:center;">
+    <h1 style="font-size:2.2rem; font-weight:800; margin-bottom:0.7rem;">🌾 Nos Cultures</h1>
+    <p style="color:rgba(255,255,255,0.85); max-width:550px; margin:0 auto;">Retrouvez toutes les fiches cultures classées par type et par saison pour mieux planifier vos semis.</p>
+  </section>
+
+  <!-- FILTRES + CARTES -->
+  <section class="section">
+
+    <!-- Barre de recherche -->
+    <div style="margin-bottom:1.5rem;">
+      <input
+        type="text"
+        id="recherche"
+        placeholder="🔍 Rechercher une culture..."
+        oninput="filtrerCultures()"
+        style="width:100%; max-width:450px; padding:0.75rem 1.2rem; border:2px solid var(--vert-clair); border-radius:50px; font-size:1rem; font-family:inherit; outline:none;"
+      />
+    </div>
+
+    <!-- Filtres par type -->
+    <p style="font-weight:600; color:var(--vert-fonce); margin-bottom:0.6rem;">Filtrer par type :</p>
+    <div class="filtres" id="filtres-type">
+      <button class="filtre-btn actif" onclick="setFiltre('tous', this)">Tous</button>
+      <button class="filtre-btn" onclick="setFiltre('cereale', this)">🌾 Céréales</button>
+      <button class="filtre-btn" onclick="setFiltre('legume', this)">🥦 Légumes</button>
+      <button class="filtre-btn" onclick="setFiltre('legumineuse', this)">🫘 Légumineuses</button>
+      <button class="filtre-btn" onclick="setFiltre('tubercule', this)">🍠 Tubercules</button>
+      <button class="filtre-btn" onclick="setFiltre('fruit', this)">🍋 Fruits</button>
+    </div>
+
+    <!-- Filtres par saison -->
+    <p style="font-weight:600; color:var(--vert-fonce); margin-bottom:0.6rem; margin-top:1rem;">Filtrer par saison :</p>
+    <div class="filtres" id="filtres-saison">
+      <button class="filtre-btn actif" onclick="setFiltreSaison('toutes', this)">Toutes saisons</button>
+      <button class="filtre-btn" onclick="setFiltreSaison('hivernage', this)">🌧️ Hivernage</button>
+      <button class="filtre-btn" onclick="setFiltreSaison('seche', this)">☀️ Saison sèche</button>
+      <button class="filtre-btn" onclick="setFiltreSaison('toute-annee', this)">🔄 Toute l'année</button>
+    </div>
+
+    <!-- Compteur -->
+    <p id="compteur" style="margin-top:1.2rem; color:var(--gris-texte); font-size:0.92rem;">Affichage de <strong id="nb-resultats">12</strong> cultures</p>
+
+    <!-- GRILLE CULTURES -->
+    <div class="cards-grid" id="grille-cultures" style="margin-top:1.5rem;">
+
+      <div class="card" data-type="cereale" data-saison="hivernage" data-nom="riz">
+        <div class="card-img">🌾</div>
+        <div class="card-body">
+          <span class="card-tag">Céréale</span>
+          <span class="badge badge-printemps" style="margin-left:0.4rem;">Hivernage</span>
+          <h3>Riz</h3>
+          <p>Culture principale en zones humides. Nécessite beaucoup d'eau et un sol argileux.</p>
+          <div style="font-size:0.82rem; color:var(--gris-texte); margin-bottom:0.8rem;">⏱ 120–150 jours &nbsp;|&nbsp; 💧 Forte irrigation</div>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="cereale" data-saison="hivernage" data-nom="maïs">
+        <div class="card-img">🌽</div>
+        <div class="card-body">
+          <span class="card-tag">Céréale</span>
+          <span class="badge badge-ete" style="margin-left:0.4rem;">Hivernage</span>
+          <h3>Maïs</h3>
+          <p>Très répandu, adapté à de nombreux climats. Récolte en 90 à 120 jours.</p>
+          <div style="font-size:0.82rem; color:var(--gris-texte); margin-bottom:0.8rem;">⏱ 90–120 jours &nbsp;|&nbsp; 💧 Modérée</div>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="cereale" data-saison="hivernage" data-nom="mil sorgho">
+        <div class="card-img">🌿</div>
+        <div class="card-body">
+          <span class="card-tag">Céréale</span>
+          <span class="badge badge-ete" style="margin-left:0.4rem;">Hivernage</span>
+          <h3>Mil / Sorgho</h3>
+          <p>Céréales résistantes à la sécheresse, très cultivées dans les zones sahéliennes.</p>
+          <div style="font-size:0.82rem; color:var(--gris-texte); margin-bottom:0.8rem;">⏱ 90–110 jours &nbsp;|&nbsp; 💧 Faible</div>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="legume" data-saison="seche" data-nom="tomate">
+        <div class="card-img">🍅</div>
+        <div class="card-body">
+          <span class="card-tag">Légume</span>
+          <span class="badge badge-hiver" style="margin-left:0.4rem;">Saison sèche</span>
+          <h3>Tomate</h3>
+          <p>Culture maraîchère très rentable. Demande un suivi régulier contre les maladies.</p>
+          <div style="font-size:0.82rem; color:var(--gris-texte); margin-bottom:0.8rem;">⏱ 60–90 jours &nbsp;|&nbsp; 💧 Régulière</div>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="legume" data-saison="seche" data-nom="oignon">
+        <div class="card-img">🧅</div>
+        <div class="card-body">
+          <span class="card-tag">Légume</span>
+          <span class="badge badge-hiver" style="margin-left:0.4rem;">Saison sèche</span>
+          <h3>Oignon</h3>
+          <p>Culture à forte valeur commerciale. Demande un sol meuble et une irrigation régulière.</p>
+          <div style="font-size:0.82rem; color:var(--gris-texte); margin-bottom:0.8rem;">⏱ 90–120 jours &nbsp;|&nbsp; 💧 Régulière</div>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="legume" data-saison="seche" data-nom="chou carotte haricot">
+        <div class="card-img">🥦</div>
+        <div class="card-body">
+          <span class="card-tag">Légume</span>
+          <span class="badge badge-hiver" style="margin-left:0.4rem;">Saison sèche</span>
+          <h3>Légumes feuilles</h3>
+          <p>Chou, carotte, haricot vert — cultures maraîchères de saison froide très demandées.</p>
+          <div style="font-size:0.82rem; color:var(--gris-texte); margin-bottom:0.8rem;">⏱ 45–80 jours &nbsp;|&nbsp; 💧 Modérée</div>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="legumineuse" data-saison="hivernage" data-nom="arachide">
+        <div class="card-img">🥜</div>
+        <div class="card-body">
+          <span class="card-tag">Légumineuse</span>
+          <span class="badge badge-ete" style="margin-left:0.4rem;">Hivernage</span>
+          <h3>Arachide</h3>
+          <p>Excellente pour fixer l'azote. Culture sèche adaptée aux zones sahéliennes.</p>
+          <div style="font-size:0.82rem; color:var(--gris-texte); margin-bottom:0.8rem;">⏱ 90–120 jours &nbsp;|&nbsp; 💧 Faible</div>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="legumineuse" data-saison="hivernage" data-nom="niébé haricot">
+        <div class="card-img">🫘</div>
+        <div class="card-body">
+          <span class="card-tag">Légumineuse</span>
+          <span class="badge badge-ete" style="margin-left:0.4rem;">Hivernage</span>
+          <h3>Niébé</h3>
+          <p>Légumineuse très résistante, excellente source de protéines. Améliore la fertilité du sol.</p>
+          <div style="font-size:0.82rem; color:var(--gris-texte); margin-bottom:0.8rem;">⏱ 60–90 jours &nbsp;|&nbsp; 💧 Faible</div>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="tubercule" data-saison="toute-annee" data-nom="manioc">
+        <div class="card-img">🍠</div>
+        <div class="card-body">
+          <span class="card-tag">Tubercule</span>
+          <span class="badge badge-printemps" style="margin-left:0.4rem;">Toute l'année</span>
+          <h3>Manioc</h3>
+          <p>Culture rustique résistante à la sécheresse. Récolte 8 à 18 mois après plantation.</p>
+          <div style="font-size:0.82rem; color:var(--gris-texte); margin-bottom:0.8rem;">⏱ 8–18 mois &nbsp;|&nbsp; 💧 Faible</div>
+          <a href="fiches.html" class="card-link">Voir la fiche →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">AGRI<span>·TECH</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="protection.html">Protection</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p>© 2024 AGRI·TECH — droits réservés</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    let filtreType = 'tous';
+    let filtreSaison = 'toutes';
+
+    function setFiltre(type, bouton) {
+      filtreType = type;
+      document.querySelectorAll('#filtres-type .filtre-btn').forEach(btn => btn.classList.remove('actif'));
+      bouton.classList.add('actif');
+      filtrerCultures();
+    }
+
+    function setFiltreSaison(saison, bouton) {
+      filtreSaison = saison;
+      document.querySelectorAll('#filtres-saison .filtre-btn').forEach(btn => btn.classList.remove('actif'));
+      bouton.classList.add('actif');
+      filtrerCultures();
+    }
+
+    function filtrerCultures() {
+      const recherche = document.getElementById('recherche').value.toLowerCase().trim();
+      let total = 0;
+      document.querySelectorAll('#grille-cultures .card').forEach(carte => {
+        const correspondType = filtreType === 'tous' || carte.dataset.type === filtreType;
+        const correspondSaison = filtreSaison === 'toutes' || carte.dataset.saison === filtreSaison;
+        const correspondRecherche = !recherche || carte.dataset.nom.includes(recherche);
+        const visible = correspondType && correspondSaison && correspondRecherche;
+        carte.style.display = visible ? '' : 'none';
+        if (visible) total++;
+      });
+      document.getElementById('nb-resultats').textContent = total;
+    }
+  </script>
+</body>
+</html>
