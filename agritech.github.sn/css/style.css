@@ -205,6 +205,11 @@
     color: var(--gris-texte);
     font-size: 0.9rem;
   }
+
+  .overview-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--vert-clair);
+  }
   
   /* === CARTES (cards) === */
   .cards-grid {
