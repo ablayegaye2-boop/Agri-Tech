@@ -248,6 +248,11 @@
     top: 2.5rem;
     background: rgba(245, 166, 35, 0.92);
   }
+
+  .card-badge.tertiary {
+    top: 4.2rem;
+    background: rgba(77, 134, 196, 0.92);
+  }
   
   .card-img {
     width: 100%;
