@@ -330,7 +330,17 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.6rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .filter-tip {
+    background: #f7fdf9;
+    border: 1px solid #dcefe3;
+    color: var(--vert-fonce);
+    border-radius: var(--radius);
+    padding: 0.7rem 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 0.92rem;
   }
   
   .filtre-btn {
