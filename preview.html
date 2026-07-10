@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Tech - Aperçu CSS</title>
+    <link rel="stylesheet" href="CSS/style-ibrahima.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">AGRI<span>·TECH</span></div>
+        <div class="nav-links">
+            <a href="#home" class="active">Accueil</a>
+            <a href="#cultures">Cultures</a>
+            <a href="#calendar">Calendrier</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <h1>Bienvenue sur AGRI<span>·TECH</span></h1>
+        <p>Votre guide complet pour optimiser la productivité agricole à travers les saisons</p>
+        <a href="#cultures" class="btn-hero">Découvrir nos solutions</a>
+    </section>
+
+    <!-- SECTION CULTURES -->
+    <section class="section" id="cultures">
+        <h2 class="section-title">Cultures Disponibles</h2>
+        <p class="section-subtitle">Explorez nos recommandations pour chaque type de culture</p>
+        
+        <div class="filtres">
+            <button class="filtre-btn actif">Tous</button>
+            <button class="filtre-btn">Céréales</button>
+            <button class="filtre-btn">Fruits</button>
+            <button class="filtre-btn">Légumes</button>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-img">🌾</div>
+                <div class="card-body">
+                    <span class="card-tag">Céréale</span>
+                    <h3>Riz</h3>
+                    <p>Découvrez les meilleures techniques de culture du riz pour maximiser votre rendement.</p>
+                    <a href="#" class="card-link">En savoir plus →</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-img">🥕</div>
+                <div class="card-body">
+                    <span class="card-tag">Légume</span>
+                    <h3>Carotte</h3>
+                    <p>Culture facile et rentable avec des rendements stables tout au long de l'année.</p>
+                    <a href="#" class="card-link">En savoir plus →</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-img">🍎</div>
+                <div class="card-body">
+                    <span class="card-tag">Fruit</span>
+                    <h3>Pomme</h3>
+                    <p>Optimisez votre verger avec nos guides spécialisés et conseils d'experts.</p>
+                    <a href="#" class="card-link">En savoir plus →</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-img">🌽</div>
+                <div class="card-body">
+                    <span class="card-tag">Céréale</span>
+                    <h3>Maïs</h3>
+                    <p>Culture principale avec des techniques éprouvées pour des récoltes abondantes.</p>
+                    <a href="#" class="card-link">En savoir plus →</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-img">🍅</div>
+                <div class="card-body">
+                    <span class="card-tag">Légume</span>
+                    <h3>Tomate</h3>
+                    <p>Maîtrisez la culture de la tomate pour des fruits sains et savoureux.</p>
+                    <a href="#" class="card-link">En savoir plus →</a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-img">🥔</div>
+                <div class="card-body">
+                    <span class="card-tag">Légume</span>
+                    <h3>Pomme de Terre</h3>
+                    <p>Production robuste adaptée à tous les types de sols et climat.</p>
+                    <a href="#" class="card-link">En savoir plus →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <strong>💡 Conseil :</strong> Consultez notre calendrier saisonnier pour connaître les meilleures périodes de plantation et de récolte.
+        </div>
+    </section>
+
+    <!-- SECTION CALENDRIER -->
+    <section class="section" id="calendar">
+        <h2 class="section-title">Calendrier Agricole</h2>
+        <p class="section-subtitle">Planning optimal pour vos cultures selon les saisons</p>
+
+        <div class="calendrier-grid">
+            <!-- Printemps -->
+            <div class="mois-card">
+                <h3>🌸 Printemps</h3>
+                <ul>
+                    <li>Mars: Préparation des champs</li>
+                    <li>Avril: Semis du riz</li>
+                    <li>Mai: Plantation des légumes</li>
+                </ul>
+            </div>
+
+            <!-- Été -->
+            <div class="mois-card">
+                <h3>☀️ Été</h3>
+                <ul>
+                    <li>Juin: Croissance active</li>
+                    <li>Juillet: Arrosage régulier</li>
+                    <li>Août: Entretien des cultures</li>
+                </ul>
+            </div>
+
+            <!-- Automne -->
+            <div class="mois-card">
+                <h3>🍂 Automne</h3>
+                <ul>
+                    <li>Septembre: Récolte du riz</li>
+                    <li>Octobre: Moisson du maïs</li>
+                    <li>Novembre: Récolte des fruits</li>
+                </ul>
+            </div>
+
+            <!-- Hiver -->
+            <div class="mois-card">
+                <h3>❄️ Hiver</h3>
+                <ul>
+                    <li>Décembre: Repos des champs</li>
+                    <li>Janvier: Planification suivante</li>
+                    <li>Février: Préparation du sol</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Contactez-nous</h2>
+        <p class="section-subtitle">Avez-vous des questions ? Nous sommes là pour vous aider</p>
+
+        <form style="max-width: 600px; margin: 0 auto;">
+            <div class="form-group">
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" placeholder="Votre nom" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="votre@email.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Votre message..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+            <button type="reset" class="btn btn-outline" style="margin-left: 1rem;">Annuler</button>
+        </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">AGRI<span>·TECH</span></div>
+        <p>Votre partenaire pour une agriculture moderne et durable</p>
+        <div class="footer-links">
+            <a href="#home">Accueil</a>
+            <a href="#cultures">Cultures</a>
+            <a href="#calendar">Calendrier</a>
+            <a href="#contact">Contact</a>
+            <a href="#">Politique de confidentialité</a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.8rem;">© 2024 Agri-Tech. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Menu toggle pour mobile
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('open');
+        });
+
+        // Fermer le menu au clic sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.nav-links').classList.remove('open');
+            });
+        });
+
+        // Filtres de culture
+        document.querySelectorAll('.filtre-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('actif'));
+                this.classList.add('actif');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
