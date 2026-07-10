@@ -44,6 +44,15 @@ function toggleMenu() {
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
   });
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.boxShadow = '0 12px 24px rgba(26, 71, 49, 0.18)';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.boxShadow = '';
+    });
+  });
   
   // === BOUTON RETOUR EN HAUT ===
   const btnHaut = document.createElement('button');
