@@ -214,6 +214,7 @@
   }
   
   .card {
+    position: relative;
     background: var(--blanc);
     border-radius: var(--radius-lg);
     box-shadow: var(--ombre);
@@ -224,6 +225,18 @@
   .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+  }
+
+  .card-badge {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    background: rgba(26, 71, 49, 0.9);
+    color: var(--blanc);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
   }
   
   .card-img {
