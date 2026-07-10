@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AGRI·TECH — Protection des cultures</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">AGRI<span>·TECH</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="protection.html" class="active">Protection</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" type="button" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- EN-TÊTE -->
+  <section style="background: linear-gradient(135deg, var(--vert-fonce), var(--vert-moyen)); color:var(--blanc); padding:3.5rem 2rem; text-align:center;">
+    <h1 style="font-size:2.2rem; font-weight:800; margin-bottom:0.7rem;">🛡️ Protection des Cultures</h1>
+    <p style="color:rgba(255,255,255,0.85); max-width:580px; margin:0 auto;">Identifiez les maladies et ravageurs qui menacent vos cultures, et découvrez les traitements adaptés.</p>
+  </section>
+
+  <!-- ALERTE -->
+  <section style="background:var(--blanc); padding:1.5rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div style="background:#fff3e0; border-left:5px solid var(--jaune-or); border-radius:var(--radius); padding:1rem 1.4rem; color:#e65100;">
+        ⚠️ <strong>Alerte saison :</strong> En période d'hivernage, la pression des maladies fongiques et des insectes est maximale. Surveillez vos cultures 2 à 3 fois par semaine.
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTRES -->
+  <section class="section" style="padding-bottom:0;">
+    <h2 class="section-title">Menaces recensées</h2>
+    <p class="section-subtitle">Filtrez par type de menace pour trouver rapidement la solution</p>
+    <div class="filtres">
+      <button class="filtre-btn actif" onclick="filtrerMenaces('tous', this)">Tous</button>
+      <button class="filtre-btn" onclick="filtrerMenaces('maladie', this)">🦠 Maladies</button>
+      <button class="filtre-btn" onclick="filtrerMenaces('ravageur', this)">🐛 Ravageurs</button>
+      <button class="filtre-btn" onclick="filtrerMenaces('carence', this)">🌿 Carences</button>
+    </div>
+  </section>
+
+  <!-- GRILLE MENACES -->
+  <section class="section" style="padding-top:1.5rem;">
+    <div class="cards-grid" id="grille-menaces">
+
+      <div class="card" data-type="maladie">
+        <div class="card-img" style="background:#fce4ec; font-size:3rem;">🦠</div>
+        <div class="card-body">
+          <span class="card-tag" style="background:#fce4ec; color:#c62828;">Maladie fongique</span>
+          <h3>Mildou</h3>
+          <p>Taches jaunes sur feuilles évoluant vers le brun. Se propage rapidement par temps humide.</p>
+          <div style="margin-bottom:0.8rem;">
+            <strong style="font-size:0.85rem; color:var(--vert-fonce);">Cultures touchées :</strong>
+            <span style="font-size:0.82rem; color:var(--gris-texte);"> Tomate, Pomme de terre, Oignon</span>
+          </div>
+          <div class="info-box" style="padding:0.7rem 1rem; margin-bottom:0.8rem;">
+            <strong>🛡️ Traitement :</strong> Fongicide à base de cuivre (Bouillie bordelaise). Appliquer tous les 10 jours en saison humide.
+          </div>
+          <span style="font-size:0.82rem; color:#c62828; font-weight:600;">⚠️ Risque élevé en hivernage</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="maladie">
+        <div class="card-img" style="background:#fff3e0; font-size:3rem;">🟠</div>
+        <div class="card-body">
+          <span class="card-tag" style="background:#fff3e0; color:#e65100;">Maladie fongique</span>
+          <h3>Rouille</h3>
+          <p>Pustules orangées à brun rougeâtre sur les feuilles. Réduit fortement le rendement des céréales.</p>
+          <div style="margin-bottom:0.8rem;">
+            <strong style="font-size:0.85rem; color:var(--vert-fonce);">Cultures touchées :</strong>
+            <span style="font-size:0.82rem; color:var(--gris-texte);"> Maïs, Mil, Sorgho, Riz</span>
+          </div>
+          <div class="info-box" style="padding:0.7rem 1rem; margin-bottom:0.8rem;">
+            <strong>🛡️ Traitement :</strong> Fongicide systémique (Mancozèbe). Éliminer les résidus de récolte contaminés.
+          </div>
+          <span style="font-size:0.82rem; color:#e65100; font-weight:600;">⚠️ Risque modéré à élevé</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="maladie">
+        <div class="card-img" style="background:#f3e5f5; font-size:3rem;">🌱</div>
+        <div class="card-body">
+          <span class="card-tag" style="background:#f3e5f5; color:#6a1b9a;">Maladie fongique</span>
+          <h3>Fonte des semis</h3>
+          <p>Les jeunes plantules s'affaissent et meurent au collet. Fréquente en pépinière après semis.</p>
+          <div style="margin-bottom:0.8rem;">
+            <strong style="font-size:0.85rem; color:var(--vert-fonce);">Cultures touchées :</strong>
+            <span style="font-size:0.82rem; color:var(--gris-texte);"> Tomate, Chou, Oignon, Riz</span>
+          </div>
+          <div class="info-box" style="padding:0.7rem 1rem; margin-bottom:0.8rem;">
+            <strong>🛡️ Traitement :</strong> Désinfecter le sol avant semis. Fongicide Thirame en traitement de semences.
+          </div>
+          <span style="font-size:0.82rem; color:#6a1b9a; font-weight:600;">⚠️ Risque élevé en pépinière</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="ravageur">
+        <div class="card-img" style="background:#e8f5e9; font-size:3rem;">🐜</div>
+        <div class="card-body">
+          <span class="card-tag" style="background:#e8f5e9; color:#2e7d32;">Ravageur insecte</span>
+          <h3>Pucerons</h3>
+          <p>Petits insectes verts ou noirs qui sucent la sève. Transmettent des virus et affaiblissent les plants.</p>
+          <div style="margin-bottom:0.8rem;">
+            <strong style="font-size:0.85rem; color:var(--vert-fonce);">Cultures touchées :</strong>
+            <span style="font-size:0.82rem; color:var(--gris-texte);"> Tomate, Haricot, Chou, Arachide</span>
+          </div>
+          <div class="info-box" style="padding:0.7rem 1rem; margin-bottom:0.8rem;">
+            <strong>🛡️ Traitement :</strong> Insecticide pyréthrinoïde ou savon insecticide. Introduire des coccinelles (lutte biologique).
+          </div>
+          <span style="font-size:0.82rem; color:#2e7d32; font-weight:600;">✅ Traitement naturel possible</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="ravageur">
+        <div class="card-img" style="background:#fff8e1; font-size:3rem;">🐛</div>
+        <div class="card-body">
+          <span class="card-tag" style="background:#fff8e1; color:#f57f17;">Ravageur insecte</span>
+          <h3>Chenilles légionnaires</h3>
+          <p>Dévorent les feuilles et les épis du maïs la nuit. Peuvent détruire une parcelle entière en quelques jours.</p>
+          <div style="margin-bottom:0.8rem;">
+            <strong style="font-size:0.85rem; color:var(--vert-fonce);">Cultures touchées :</strong>
+            <span style="font-size:0.82rem; color:var(--gris-texte);"> Maïs, Mil, Sorgho, Riz</span>
+          </div>
+          <div class="info-box" style="padding:0.7rem 1rem; margin-bottom:0.8rem;">
+            <strong>🛡️ Traitement :</strong> Insecticide Chlorpyrifos ou Spinosad. Surveiller la nuit lors des premières attaques.
+          </div>
+          <span style="font-size:0.82rem; color:#f57f17; font-weight:600;">⚠️ Risque très élevé en hivernage</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="ravageur">
+        <div class="card-img" style="background:#efebe9; font-size:3rem;">🐜</div>
+        <div class="card-body">
+          <span class="card-tag" style="background:#efebe9; color:#4e342e;">Ravageur sol</span>
+          <h3>Termites</h3>
+          <p>S'attaquent aux racines et aux tiges des jeunes plants. Causent des dégâts importants en saison sèche.</p>
+          <div style="margin-bottom:0.8rem;">
+            <strong style="font-size:0.85rem; color:var(--vert-fonce);">Cultures touchées :</strong>
+            <span style="font-size:0.82rem; color:var(--gris-texte);"> Maïs, Manioc, Arachide, Sorgho</span>
+          </div>
+          <div class="info-box" style="padding:0.7rem 1rem; margin-bottom:0.8rem;">
+            <strong>🛡️ Traitement :</strong> Insecticide au sol (Imidaclopride). Éviter les résidus de bois dans les parcelles.
+          </div>
+          <span style="font-size:0.82rem; color:#4e342e; font-weight:600;">⚠️ Risque élevé en saison sèche</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="carence">
+        <div class="card-img" style="background:#e8f5e9; font-size:3rem;">🌿</div>
+        <div class="card-body">
+          <span class="card-tag" style="background:#e8f5e9; color:#1b5e20;">Carence minérale</span>
+          <h3>Carence en Azote (N)</h3>
+          <p>Jaunissement des feuilles du bas vers le haut. Croissance ralentie et tiges fines.</p>
+          <div style="margin-bottom:0.8rem;">
+            <strong style="font-size:0.85rem; color:var(--vert-fonce);">Cultures touchées :</strong>
+            <span style="font-size:0.82rem; color:var(--gris-texte);"> Maïs, Riz, Tomate, Chou</span>
+          </div>
+          <div class="info-box" style="padding:0.7rem 1rem; margin-bottom:0.8rem;">
+            <strong>🛡️ Correction :</strong> Apport d'urée (46% N) ou de compost bien décomposé. Appliquer en début de végétation.
+          </div>
+          <span style="font-size:0.82rem; color:#1b5e20; font-weight:600;">💡 Sol pauvre ou lessivé</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="carence">
+        <div class="card-img" style="background:#fff9c4; font-size:3rem;">🟡</div>
+        <div class="card-body">
+          <span class="card-tag" style="background:#fff9c4; color:#f9a825;">Carence minérale</span>
+          <h3>Carence en Fer (Fe)</h3>
+          <p>Jaunissement entre les nervures des jeunes feuilles. Les nervures restent vertes.</p>
+          <div style="margin-bottom:0.8rem;">
+            <strong style="font-size:0.85rem; color:var(--vert-fonce);">Cultures touchées :</strong>
+            <span style="font-size:0.82rem; color:var(--gris-texte);"> Riz, Arachide, Niébé</span>
+          </div>
+          <div class="info-box" style="padding:0.7rem 1rem; margin-bottom:0.8rem;">
+            <strong>🛡️ Correction :</strong> Chélate de fer en pulvérisation foliaire. Acidifier légèrement le sol si nécessaire.
+          </div>
+          <span style="font-size:0.82rem; color:#f9a825; font-weight:600;">💡 Fréquent en sols alcalins</span>
+        </div>
+      </div>
+
+      <div class="card" data-type="ravageur">
+        <div class="card-img" style="background:#fce4ec; font-size:3rem;">🪱</div>
+        <div class="card-body">
+          <span class="card-tag" style="background:#fce4ec; color:#880e4f;">Ravageur sol</span>
+          <h3>Nématodes</h3>
+          <p>Vers microscopiques qui s'attaquent aux racines. Forment des galles et bloquent l'absorption d'eau.</p>
+          <div style="margin-bottom:0.8rem;">
+            <strong style="font-size:0.85rem; color:var(--vert-fonce);">Cultures touchées :</strong>
+            <span style="font-size:0.82rem; color:var(--gris-texte);"> Tomate, Oignon, Carotte, Arachide</span>
+          </div>
+          <div class="info-box" style="padding:0.7rem 1rem; margin-bottom:0.8rem;">
+            <strong>🛡️ Traitement :</strong> Rotation avec cultures non-hôtes. Solarisation du sol. Nématicide si infestation grave.
+          </div>
+          <span style="font-size:0.82rem; color:#880e4f; font-weight:600;">⚠️ Difficile à éliminer</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="aucun-resultat" style="display:none; text-align:center; padding:3rem; color:var(--gris-texte);">
+      <div style="font-size:3rem;">🔍</div>
+      <p style="margin-top:1rem;">Aucune menace trouvée pour ce filtre.</p>
+    </div>
+  </section>
+
+  <!-- CONSEILS PRÉVENTION -->
+  <section style="background:var(--vert-pale); padding:3.5rem 2rem;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <h2 class="section-title">Conseils de prévention</h2>
+      <p class="section-subtitle">Mieux vaut prévenir que guérir</p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1.2rem;">
+        <div class="info-box"><strong>🔄 Rotation des cultures</strong><br>Ne pas cultiver la même plante deux années de suite. Réduit les maladies de 40 à 60%.</div>
+        <div class="info-box"><strong>🌱 Semences saines</strong><br>Utiliser des semences certifiées ou traiter les semences avant le semis avec un fongicide homologué.</div>
+        <div class="info-box"><strong>💧 Irrigation maîtrisée</strong><br>Éviter l'excès d'eau qui favorise les champignons. Arroser au pied des plants, jamais sur les feuilles.</div>
+        <div class="info-box"><strong>🧹 Hygiène des parcelles</strong><br>Éliminer les résidus de récolte et les plantes malades. Ne pas les laisser pourrir sur place.</div>
+        <div class="info-box"><strong>🔍 Surveillance régulière</strong><br>Inspecter visuellement les cultures 2 à 3 fois par semaine, surtout en période humide.</div>
+        <div class="info-box"><strong>🐞 Lutte biologique</strong><br>Favoriser les auxiliaires naturels : coccinelles, chrysopes, araignées qui consomment les ravageurs.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">AGRI<span>·TECH</span></div>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="cultures.html">Cultures</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p>© 2024 AGRI·TECH — <a href="https://portfolio-website-lime-iota-41.vercel.app/">  droits réservés  </p></a>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function filtrerMenaces(type, btn) {
+      document.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('actif'));
+      btn.classList.add('actif');
+      const cartes = document.querySelectorAll('#grille-menaces .card');
+      let nb = 0;
+      cartes.forEach(carte => {
+        if (type === 'tous' || carte.dataset.type === type) {
+          carte.style.display = 'block';
+          nb++;
+        } else {
+          carte.style.display = 'none';
+        }
+      });
+      document.getElementById('aucun-resultat').style.display = nb === 0 ? 'block' : 'none';
+    }
+  </script>
+
+</body>
+</html>
