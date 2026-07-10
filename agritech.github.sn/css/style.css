@@ -355,6 +355,10 @@
     margin-bottom: 1rem;
     font-size: 0.92rem;
   }
+
+  .filter-tip strong {
+    color: var(--vert-moyen);
+  }
   
   .filtre-btn {
     padding: 0.45rem 1.2rem;
