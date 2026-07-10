@@ -243,6 +243,11 @@
     padding: 0.3rem 0.6rem;
     border-radius: 999px;
   }
+
+  .card-badge.secondary {
+    top: 2.5rem;
+    background: rgba(245, 166, 35, 0.92);
+  }
   
   .card-img {
     width: 100%;
