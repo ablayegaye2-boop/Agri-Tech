@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet collectif Agri-Tech</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --bg: #f4fbf2;
+            --card: #ffffff;
+            --text: #143019;
+            --muted: #5b745d;
+            --primary: #2f7d32;
+            --primary-dark: #225f27;
+            --border: #dbe8dc;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f4fbf2 0%, #e8f5e8 100%);
+            color: var(--text);
+        }
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px 16px 40px;
+        }
+        .hero, .panel, .team-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            box-shadow: 0 18px 40px rgba(34, 95, 39, 0.08);
+        }
+        .hero {
+            padding: clamp(20px, 3vw, 32px);
+            display: grid;
+            gap: 18px;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            line-height: 1.2;
+        }
+        .hero p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.03rem;
+            line-height: 1.7;
+        }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            min-height: 44px;
+        }
+        .btn:hover { transform: translateY(-1px); }
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 12px 24px rgba(47, 125, 50, 0.2);
+        }
+        .btn-secondary {
+            background: #f0f7ef;
+            color: var(--primary-dark);
+            border: 1px solid var(--border);
+        }
+        .grid {
+            margin-top: 24px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1.1fr 0.9fr;
+        }
+        .panel {
+            padding: clamp(18px, 3vw, 24px);
+        }
+        .panel h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+        }
+        .checklist {
+            padding-left: 18px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+        .team-card {
+            padding: clamp(18px, 3vw, 24px);
+            display: grid;
+            gap: 14px;
+        }
+        .team-list {
+            display: grid;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .team-list li {
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: #f7fcf6;
+            color: var(--muted);
+        }
+        .embed-card {
+            margin-top: 24px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: clamp(16px, 3vw, 24px);
+            box-shadow: 0 20px 45px rgba(34, 95, 39, 0.08);
+        }
+        .collab-card {
+            margin-top: 24px;
+            padding: 20px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #f7fcf5 0%, #eef8eb 100%);
+            border: 1px solid var(--border);
+        }
+        .collab-card p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        .embed-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+        .eyebrow {
+            display: inline-block;
+            margin: 0 0 8px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #eef8eb;
+            color: var(--primary-dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .embed-header p {
+            margin: 8px 0 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+        .embed-frame-shell {
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: linear-gradient(135deg, #f7fcf5 0%, #eef8eb 100%);
+        }
+        iframe {
+            width: 100%;
+            min-height: 900px;
+            border: 0;
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 12px 28px rgba(34, 95, 39, 0.10);
+        }
+        @media (max-width: 900px) {
+            .page { padding: 16px 12px 28px; }
+            .grid { grid-template-columns: 1fr; }
+            .hero { padding: 18px; }
+            .actions { flex-direction: column; }
+            .btn { width: 100%; }
+            .embed-header { flex-direction: column; }
+            iframe { min-height: 780px; }
+        }
+        @media (max-width: 600px) {
+            body { font-size: 15px; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero p, .embed-header p { font-size: 0.95rem; }
+            .embed-card { border-radius: 20px; }
+            iframe { min-height: 720px; }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <h1>Projet collectif Agri-Tech</h1>
+            <p>Ce portail centralise les contributions du groupe et présente le module de calculateur agricole comme une fonctionnalité intégrée au projet commun.</p>
+            <div class="actions">
+                <a class="btn btn-primary" href="Agri-Tech/calculator.html">Ouvrir le calculateur</a>
+                <a class="btn btn-secondary" href="collaborateurs.html">Voir les contributions</a>
+                <a class="btn btn-secondary" href="#calculator-section">Voir le module intégré</a>
+            </div>
+        </section>
+
+        <section class="grid">
+            <div class="panel">
+                <h2>Objectif du projet</h2>
+                <ul class="checklist">
+                    <li>Mettre en avant une solution agricole moderne et accessible.</li>
+                    <li>Rassembler les contributions de chaque membre dans une interface cohérente.</li>
+                    <li>Permettre une simulation rapide des besoins en semences, coûts et rentabilité.</li>
+                </ul>
+            </div>
+            <div class="team-card">
+                <h2>Contribution collective</h2>
+                <ul class="team-list">
+                    <li>Analyse et conception du projet</li>
+                    <li>Interface utilisateur et expérience</li>
+                    <li>Module calculateur agricole</li>
+                    <li>Présentation et intégration finale</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="calculator-section" class="embed-card">
+            <div class="embed-header">
+                <div>
+                    <p class="eyebrow">Module intégré</p>
+                    <h2>Calculateur agricole prêt à l’emploi</h2>
+                    <p>Le module développé est désormais visible directement dans la page collective du projet, avec une présentation plus claire et professionnelle.</p>
+                </div>
+                <a class="btn btn-primary" href="Agri-Tech/calculator.html" target="_blank" rel="noopener noreferrer">Ouvrir en plein écran</a>
+            </div>
+            <div class="embed-frame-shell">
+                <iframe src="Agri-Tech/calculator.html" title="Calculateur agricole intégré au projet collectif"></iframe>
+            </div>
+        </section>
+
+        <section class="collab-card">
+            <h2>Contribution GitHub</h2>
+            <p>Chaque collaborateur peut maintenant proposer ses améliorations depuis GitHub en suivant le guide de contribution. Les pages et modules ajoutés seront ensuite intégrés à cette plateforme unique.</p>
+            <p><a class="btn btn-secondary" href="CONTRIBUTING.md">Voir le guide de contribution</a></p>
+        </section>
+    </main>
+</body>
+</html>

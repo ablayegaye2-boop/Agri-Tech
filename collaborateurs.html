@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contributions des collaborateurs - Agri-Tech</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f4fbf2 0%, #e8f5e8 100%);
+            color: #143019;
+        }
+        .page { max-width: 1100px; margin: 0 auto; padding: 24px 16px 40px; }
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: clamp(16px, 3vw, 24px);
+            box-shadow: 0 16px 36px rgba(34, 95, 39, 0.08);
+        }
+        h1 { margin-top: 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+        @media (max-width: 600px) {
+            .page { padding: 16px 12px 28px; }
+            .grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.5rem; }
+        }
+        .module {
+            border: 1px solid #dbe8dc;
+            border-radius: 18px;
+            padding: 16px;
+            background: #f7fcf6;
+        }
+        a { color: #2f7d32; font-weight: 700; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="card">
+            <h1>Contributions des collaborateurs</h1>
+            <p>Cette page rassemble les modules proposés par les membres de l’équipe dans une plateforme unique Agri-Tech.</p>
+            <div class="grid">
+                <div class="module">
+                    <h3>Calculateur agricole</h3>
+                    <p>Module principal de la plateforme.</p>
+                    <a href="Agri-Tech/calculator.html">Ouvrir</a>
+                </div>
+                <div class="module">
+                    <h3>Page d’accueil</h3>
+                    <p>Point d’entrée du projet collectif.</p>
+                    <a href="index.html">Ouvrir</a>
+                </div>
+                <div class="module">
+                    <h3>Contributions externes</h3>
+                    <p>Les autres pages des collaborateurs peuvent être ajoutées ici.</p>
+                    <a href="index.html">Voir la plateforme</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
