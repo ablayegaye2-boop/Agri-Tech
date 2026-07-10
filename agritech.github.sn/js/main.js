@@ -48,9 +48,11 @@ function toggleMenu() {
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mouseenter', () => {
       card.style.boxShadow = '0 12px 24px rgba(26, 71, 49, 0.18)';
+      card.style.transform = 'translateY(-4px)';
     });
     card.addEventListener('mouseleave', () => {
       card.style.boxShadow = '';
+      card.style.transform = '';
     });
   });
   
